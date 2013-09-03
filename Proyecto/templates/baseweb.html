@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+{% load cms_tags sekizai_tags menu_tags %}
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	{% render_block "css" %}
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+  <title>EPG | Escuela de Posgrado</title>
+
+	<!-- css bootstrap -->
+	<link rel="stylesheet" type="text/css" href="/media/bootstrap3/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="/media/bootstrap3/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/media/bootstrap3/css/bootstrap-glyphicons.css" />
+
+  <!-- css amazingcarousel-slider -->
+  <!-- <link rel="stylesheet" type="text/css" href="amazing/css/initcarousel-1.css">
+  <link rel="stylesheet" type="text/css" href="amazing/css/initcarousel-2.css">
+  <link rel="stylesheet" type="text/css" href="amazing/css/initcarousel-3.css"> -->
+ 
+  <!-- css web -->
+  <link rel="stylesheet" type="text/css" href="/media/assets/css/style.css" /> 
+</head>
+
+<body style="padding-top: 50px;">
+  {% cms_toolbar %}
+  <!-- header-->
+  <header class="wepg-header">
+
+    <!-- Navegacion Superior -->
+    <div class="navbar navbar-fixed-top navbar-inverse" id="">
+      <div class="container">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".md-navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">EPG - UPeU</a>
+        
+        <div class="nav-collapse collapse md-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Campus Virtual</a></li>
+            <li><a href="#">Mapa del sitio</a></li> 
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Idioma <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">ES Español</a></li>
+                <li><a href="#">IN Ingles</a></li>
+              </ul>
+            </li>              
+          </ul>      
+          <ul class="nav navbar-nav pull-right">       
+            <li>
+            <form class="navbar-form" action="#">  
+              <input type="text" class="form-control" placeholder="Busqueda">            
+            </form>
+            </li>      
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div><!-- Fin Navegacion Superior -->
+
+    <div class="container">
+      <!-- Encabezado -->
+      <div class="row">
+        <div class="col-lg-12" id="wepg-encabezado">
+          <a class="pull-left" href="#">
+            <img src="/media/assets/img/logo_posgrado.png">            
+          </a>
+          <div class="pull-right icono"> 
+            <script>
+              var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+              var f=new Date();
+              document.write("Lima, "+f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+            </script>
+                           
+          </div>
+        </div>
+      </div><!-- Fin Encabezado -->
+
+      <!-- Navegacion --> 
+      <div class="row">  
+        <div class="col-lg-12 wepg-nav-main">
+          <ul class="nav nav-pills pull-right">
+            {% show_menu 0 100 100 100 %}
+          </ul>
+        </div>
+  <!-- Fin Navegacion --> 
+    </div>
+    </div> 
+
+  </header>
+  
+  <!-- principal -->
+<div class="container">
+  {% placeholder wepg_contenido %}
+  {% block wepg_contenido %}{% endblock %} 
+</div>
+
+  <!-- footer-->
+  <footer id="wepg-footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-3 wepg-navinf">
+          <div>
+          <h1>Especialidades</h1>
+          <ul class="">
+            <li><a href="#">En enfermeria</a></li>    
+          </ul>
+          <h1>Diplomados</h1>
+
+          <ul class="">
+            <li><a href="#">Estadistica Aplicada</a></li>
+            <li><a href="#">Seguridad Industrial</a></li> 
+            <li><a href="#">Bussines process Management</a></li>     
+          </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 wepg-navinf">
+          <div>
+          <h1>Maestrias</h1>
+
+          <ul class="">
+
+            <li><a href="#">Administracion de Negocios</a></li>
+            <li><a href="#">Ciencias de la Familia</a></li>
+            <li><a href="#">Enfermeria</a></li>  
+            <li><a href="#">Educación</a></li>  
+            <li><a href="#">Ingenieria de sistemas</a></li>
+            <li><a href="#">Salud Pública</a></li>  
+            <li><a href="#">Teología</a></li>        
+          </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 wepg-navinf">
+          <div>
+          <h1>Doctorados</h1>
+
+          <ul class="">
+
+            <li><a href="#">Administracion</a></li>
+            <li><a href="#">Educación</a></li>
+            <li><a href="#">Teología</a></li>        
+          </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 wepg-moreinf" >
+          <div class="icosocial">
+          <h1>Síguenos en:</h1>
+          <ul>
+            <li><a href="#" id="face"><span>Facebook</span></a></li> 
+            <li><a href="#" id="twit"><span>Twitter</span></a></li>
+            <li><a href="#" id="you"><span>Youtube</span></a></li>         
+            <li><a href="#" id="gog"><span>Google +</span></a></li>     
+          </ul>            
+          </div>
+          <div class="contactenos icono">
+            <h1>Contáctenos:</h1>
+            <p>Si tiene alguna consulta o sugerencia, póngase en contacto con nosotros.</p> 
+            <div id="ico-mail"></div> <p>epgposgrado@upeu.edu.pe </p>    
+            <div id="ico-telf"></div><p>Telef: (511)618-6315 / (511)618-6316 Fax: (511)618-6339</p>
+          </div>
+        </div>
+
+      </div> 
+    </div>  
+  </footer>
+
+<!-- js ............................................................................ -->
+{% render_block "js" %}
+<!-- js generales -->
+<script src="/media/assets/js/jquery.js"></script>
+<script src="/media/assets/js/holder.js"></script>
+<!-- js bootstrap -->
+<script src="/media/bootstrap3/js/bootstrap.js"></script>
+<script src="/media/bootstrap3/js/bootstrap.min.js"></script>
+<!-- js amazing carousel -->
+<!-- <script src="amazing/js/amazingcarousel.js"></script>   
+<script src="amazing/js/initcarousel-1.js"></script>
+<script src="amazing/js/initcarousel-2.js"></script>
+<script src="amazing/js/initcarousel-3.js"></script> -->
+
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% extends "baseweb.html" %}
+{% load cms_tags menu_tags %}
+
+{% block wepg_contenido %}  
+  <div id="carousel-example-generic" class="carousel slide">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    </ol>
+
+
+    <div class="carousel-inner">
+      <div class="item active">
+       <!--  {% placeholder wepg_slide01 %} -->
+        <img src="/media/fotos/slide03.png" alt="">
+      </div>
+      
+      <div class="item"> 
+        <!-- {% placeholder wepg_slide02 %} -->
+        <img src="/media/fotos/slide02.png" alt="">      
+      </div>      
+    </div> 
+
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+      <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+      <span class="icon-next"></span>
+    </a>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3" style="background:#002;"> 
+      <h4>NUESTROS SITIOS</h4>
+    </div>
+    <div class="col-lg-3" style="background:#fff;"> 
+      {% placeholder wepg_extraitem1 %}
+    </div>
+    <div class="col-lg-3" style="background:#fff;"> 
+      {% placeholder wepg_extraitem2 %}
+    </div>
+    <div class="col-lg-3" style="background:#fff;">
+      {% placeholder wepg_extraitem3 %} 
+    </div>
+  </div>
+
+  <div class="row">
+    <!--panel izquierdo-->
+    <div class="col-lg-8">
+
+    <!--Anuncios secundarios-->
+    <div class="wepg-panel" id="wepg-anunsec">
+      <div class="title"><h4>Anuncios</h4> </div>
+      <div class="">        
+          {% placeholder wepg_anunImagen %}        
+      </div>
+    </div>
+
+    <!--Noticias--> 
+    <div class="wepg-panel" id="wepg-noticia">
+      <div class="title"><h4>Noticias</h4> </div>
+      <div>
+        {% placeholder wepg_noticiaCont %} 
+      </div>
+    </div> 
+
+    </div>
+
+      
+
+    <!--panel derecho-->
+    <div class="col-lg-4" id="wepg-panelleft">
+
+    <!--Eventos- calendario-->  
+    <div class="wepg-panel" id="wepg-eventos">
+      <div class="title"><h4>Agenda</h4> </div>
+      <div>
+        {% placeholder wepg_agendaCont %} 
+      </div>
+    </div>
+
+    <!--publicaciones-->  
+    <div class="wepg-panel" id="wepg-publi">
+      <div class="title"><h4>Publicaciones</h4> </div>
+      <div>
+        {% placeholder wepg_publicCont %} 
+      </div>
+    </div>
+    </div>
+
+  </div>
+
+  
+
+{% endblock wepg_contenido %}

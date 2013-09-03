@@ -1,0 +1,71 @@
+
+.caja{
+    
+    width: 200px;
+    height: 150px;
+    background-color: #f4f4f4;
+}
+.caja-sombra{
+    position: relative;
+    float: left;
+    padding: 1em;
+    margin: 100px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.caja-sombra:before, .caja-sombra:after{
+    content: "";
+    position: absolute;
+    z-index: -2;
+}
+.caja-sombra:before{
+    width: 24px;
+    height: 46%;
+    top: 0;
+    right: -10px;
+    display: inline-block;
+    box-shadow: 10px -10px 10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: rotate(2deg) translate(-20px, 25px) skew(-6deg);
+    -moz-transform: rotate(2deg) translate(-20px, 25px) skew(-6deg);
+    -o-transform: rotate(2deg) translate(-20px, 25px) skew(-6deg);
+    transform: rotate(2deg) translate(-20px, 25px) skew(-6deg);
+}
+.caja-sombra:after{
+    display: inline-block;
+    height: 46%;
+    left: -10px;
+    top: 0;
+    width: 24px;
+    box-shadow: -10px -10px 10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: rotate(2deg) translate(20px,25px) skew(6deg);
+    -moz-transform: rotate(2deg) translate(20px,25px) skew(6deg);
+    -o-transform: rotate(2deg) translate(20px,25px) skew(6deg);
+    transform: rotate(2deg) translate(20px,25px) skew(6deg);
+}
+.sombra-abajo-derecha{
+    content: '';
+    width: 24px;
+    height: 46%;
+    bottom: 0;
+    right: -10px;
+    position: absolute;
+    z-index: -1;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: rotate(-2deg) translate(-20px,-25px) skew(6deg);
+    -moz-transform: rotate(-2deg) translate(-20px,-25px) skew(6deg);
+    -o-transform: rotate(-2deg) translate(-20px,-25px) skew(6deg);
+    transform: rotate(-2deg) translate(-20px,-25px) skew(6deg);
+}
+.sombra-abajo-izquierda{
+    content: '';
+    width: 24px;
+    height: 46%;
+    bottom: 0;
+    left: -10px;
+    position: absolute;
+    z-index: -1;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: rotate(-2deg) translate(20px,-25px) skew(-6deg);
+    -moz-transform: rotate(-2deg) translate(20px,-25px) skew(-6deg);
+    -o-transform: rotate(-2deg) translate(20px,-25px) skew(-6deg);
+    transform: rotate(-2deg) translate(20px,-25px) skew(-6deg);
+}

@@ -19,68 +19,80 @@
  
   <!-- css web -->
   <link rel="stylesheet" type="text/css" href="/media/assets/css/style.css" /> 
+  <link rel="stylesheet" type="text/css" href="/media/assets/css/styleshadow.css" /> 
 </head>
 
-<body style="padding-top: 50px;">
+<body>
   {% cms_toolbar %}
+  
   <!-- header-->
-  <header class="wepg-header">
+  <header id="wepg-header">
 
     <!-- Navegacion Superior -->
-    <div class="navbar navbar-fixed-top navbar-inverse" id="">
-      <div class="container">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".md-navbar-collapse">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">      
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-wepgmain">
+          <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">EPG - UPeU</a>
-        
-        <div class="nav-collapse collapse md-navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Campus Virtual</a></li>
-            <li><a href="#">Mapa del sitio</a></li> 
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Idioma <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">ES Español</a></li>
-                <li><a href="#">IN Ingles</a></li>
-              </ul>
-            </li>              
-          </ul>      
-          <ul class="nav navbar-nav pull-right">       
-            <li>
-            <form class="navbar-form" action="#">  
-              <input type="text" class="form-control" placeholder="Busqueda">            
-            </form>
-            </li>      
-          </ul>
-        </div><!--/.nav-collapse -->
+        <a class="navbar-brand" href="#">Inicio</a>
       </div>
-    </div><!-- Fin Navegacion Superior -->
 
-    <div class="container">
+      
+      <div class="collapse navbar-collapse navbar-wepgmain">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Aula Virtual</a></li>
+          <li><a href="#">Mapa del Sitio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Idioma <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">English</a></li>
+              <li><a href="#">Español</a></li>
+            </ul>
+          </li>
+        </ul>  
+
+        <ul class="nav navbar-nav navbar-right">
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>    
+    </nav>
+    <!-- Fin Navegacion Superior -->
+
+    <div class="container" >
       <!-- Encabezado -->
-      <div class="row">
-        <div class="col-lg-12" id="wepg-encabezado">
-          <a class="pull-left" href="#">
-            <img src="/media/assets/img/logo_posgrado.png">            
-          </a>
-          <div class="pull-right icono"> 
+      <div class="row" id="wepg-encabezado">
+        <div class="col-lg-9">
+          <a  href="http://localhost:8000/es/">
+            <img src="/media/assets/img/logo_posgrado2.png">            
+          </a>          
+        </div>
+
+        <div class="col-lg-3">
+          <div class="pull-right">
+            <small class="">
             <script>
               var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
               var f=new Date();
               document.write("Lima, "+f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
             </script>
-                           
+            </small>               
           </div>
         </div>
       </div><!-- Fin Encabezado -->
 
       <!-- Navegacion --> 
       <div class="row">  
-        <div class="col-lg-12 wepg-nav-main">
+        <div class="col-lg-12" id="wepg-navmain">
           <ul class="nav nav-pills pull-right">
             {% show_menu 0 100 100 100 "menu_1.html" %}           
           </ul>

@@ -29,36 +29,46 @@
     </a>
   </div>
 
-  <div class="row">
-    <div class="col-lg-3" style="background:#002;"> 
-      <h4>NUESTROS SITIOS</h4>
+  <div class="row" id="wepg-sitios">
+    <div class="col-lg-3 "> 
+      <div class="wepg-title ">        
+        NUESTROS SITIOS
+      </div>      
     </div>
-    <div class="col-lg-3" style="background:#fff;"> 
-      {% placeholder wepg_extraitem1 %}
+    <div class="col-lg-3" > 
+      <div class="wepg-item">
+        {% placeholder wepg_extraitem1 %}
+      </div>       
     </div>
-    <div class="col-lg-3" style="background:#fff;"> 
-      {% placeholder wepg_extraitem2 %}
+    <div class="col-lg-3"> 
+      <div class="wepg-item">
+        {% placeholder wepg_extraitem2 %}
+      </div>
     </div>
-    <div class="col-lg-3" style="background:#fff;">
-      {% placeholder wepg_extraitem3 %} 
+    <div class="col-lg-3">
+      <div class="wepg-item">
+        {% placeholder wepg_extraitem3 %}
+      </div> 
     </div>
   </div>
 
   <div class="row">
     <!--panel izquierdo-->
-    <div class="col-lg-8">
+    <div class="col-lg-8" >
 
     <!--Anuncios secundarios-->
-    <div class="wepg-panel" id="wepg-anunsec">
-      <div class="title"><h4>Anuncios</h4> </div>
-      <div class="">        
-          {% placeholder wepg_anunImagen %}        
-      </div>
+    <div class="wepg-panel" id="wepg-anuncios">
+      <div class="wepg-title">Anuncios</div> 
+        
+          <div class=""> 
+            {% placeholder wepg_anunImagen %} 
+          </div>
+           
     </div>
 
     <!--Noticias--> 
-    <div class="wepg-panel" id="wepg-noticia">
-      <div class="title"><h4>Noticias</h4> </div>
+    <div class="wepg-panel" id="wepg-noticias">
+      <div class="wepg-title">Noticias</div>
       <div>
         {% placeholder wepg_noticiaCont %} 
       </div>
@@ -73,7 +83,7 @@
 
     <!--Eventos- calendario-->  
     <div class="wepg-panel" id="wepg-eventos">
-      <div class="title"><h4>Agenda</h4> </div>
+      <div class="wepg-title">Agenda</div>
       <div>
         {% placeholder wepg_agendaCont %} 
       </div>
@@ -81,7 +91,7 @@
 
     <!--publicaciones-->  
     <div class="wepg-panel" id="wepg-publi">
-      <div class="title"><h4>Publicaciones</h4> </div>
+      <div class="wepg-title">Publicaciones</div>
       <div>
         {% placeholder wepg_publicCont %} 
       </div>

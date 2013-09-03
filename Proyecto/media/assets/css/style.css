@@ -1,16 +1,11 @@
 /*
  * Web Posgrado UPeU
  *
- * Copyright Grupocova, 
- *
+ * Copyright Grupocova,  
  */
+
+
 /*Estilos Generales*/
-
-
-@font-face{
-  font-family: "chivo";
-  src:url(../fonts/font-chivo/chivo-regular.ttf);
-}
 
 body{
   padding-top: 50px;
@@ -18,271 +13,127 @@ body{
   background: rgba(127, 56, 100, 0.05);
 }
 
-.contenido {  
-  padding: 0 10px;
-  height: 100%;
-}
 
 .wepg-panel{
-  /*border: 1px solid #fff;*/
-  padding: 0 10px 0 10px;
-  /*border: 1px solid #000;*/
-  border: none;
-  background: #fff;
-}
-.wepg-panel .title{  
-  font-family: chivo;
-  font-size: 14pt;
-  text-transform: uppercase;
-  color: #000;
-  padding: 10px 3px 10px 10px;
-  margin-bottom: 15px;
-  border-bottom: 3px solid #000;
-  background: #fff; 
-}
-
-#wepg-principal{
-  margin-top: 10px;
-  padding-bottom: 0;
-}
-
-#wepg-principal .row{
-  margin-bottom: 10px;
-}
-#wepg-principal .panel{
-  margin-bottom: 0;
-}
-
-#wepg-principal .panel .panel-heading{
-  font-size: 14pt;
-  font-weight: bold;
-  color: #fff;
-  background: -webkit-linear-gradient(#7c7c7c, #646363);
-  background: -moz-linear-gradient(#7c7c7c, #646363);
-  background: -o-linear-gradient(#7c7c7c, #646363);
-  
+  background-color: #b3b3b3;
+  border-radius: 4px;
+  padding: 8px 8px;
 }
 
 /*Estilos de componentes de la web*/
-/*Header*/
-.wepg-header{
+/*Header (#wepg-header)  */
+#wepg-header{
   padding-bottom: 5px;
+  padding-top: 5px;
   background: #fff;
-  /*background: -webkit-linear-gradient(#9B0000, #480000);
-  background: -moz-linear-gradient(#9B0000, #480000);
-  background: -o-linear-gradient(#9B0000, #480000);*/
 }
 
-#wepg-navsup{
-  background-color: #7f3864;
-  color: #fff;
-}
-
-#wepg-navsup ul li a{
-  color: #fff;
-}
+/*Encabezado (#wepg-encabezado)  */
 #wepg-encabezado{
-  padding: 30px 0 15px 0;  
+  padding: 10px 0;  
   color:#000;
 }
 
+/*navegacion principal (#wepg-navmain)  */
 
+#wepg-navmain{
 
-
-
-/*navegacion principal */
-/*.wepg-nav-main{
-  margin-right: 0;
-  margin-left: 0;
-  margin-top: 10px;
-  margin-bottom: 0;
-  padding: 0;
 }
 
-.wepg-nav-main ul{ 
-}
-
-.wepg-nav-main ul li{
-}
-
-
-.wepg-nav-main ul li a{
-  font-family: chivo;
-  font-size: 17pt;
+#wepg-navmain ul li a{
+  font-family: arial;
+  font-size: 13pt;
   font-weight: bold;  
   color: #7f3864;
 }
-
-.wepg-nav-main ul li a:hover{ 
-  color: #fff;
-  background:  #7f3864;
-}*/
-
-
-
-/*Eventos*/
-
-.idate{
-  width: 45px;
-  height:50px;
-  border: 1px solid #4d4b4b;
-  border-radius: 6px;
-  background: #fff;
-}
-.idate-month{  
-  text-align: center;
-  font-size: 9.5pt;
-  font-weight: bold;
-  color: #fff;
-  padding: 1px 0;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  background: #4d4b4b;
+#wepg-navmain .dropdown-menu {
+  padding: 5px 5px;
 }
 
-.idate-day{  
-  text-align: center;
-  font-size: 13pt;
-  font-weight: bolder;
-  padding: 2px 2px 1px 2px;
-  background: #fff;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-
-#wepg-eventos{
-  min-height: 310px;  
-  background: transparent;
-}
-
-#wepg-eventos .media .media-body{
-  font-size: 10pt;
-}
-
-#wepg-eventos .media .media-heading{
-  font-size: 10.5pt;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-
-#wepg-eventos a{
-  color: #993434;
-  text-decoration: none;  
-}
-
-#wepg-eventos .title{
-  color: #fff;
-  border-bottom: 3px solid #fff;
-  background: transparent;
-}
-
-#wepg-anunsec{
-  min-height: 310px;
-}
-
-#wepg-anunsec .title{
-  color: rgba(229, 188, 81, 1);
-  border-bottom: 3px solid rgba(229, 188, 81, 1);
-}
-
-#wepg-av{
-  width: 100%;
-}
-#wepg-av img{
-  width: 100%;
-  height: 130px;
-}
-
-/*Noticias*/
-#wepg-noticia{
-  min-height: 230px;
-}
-#wepg-noticia .title{
-  color: rgba(229, 188, 81, 1);
-  border-bottom: 3px solid rgba(229, 188, 81, 1);
-}
-
-#wepg-noticia img{
-  width: 150px;
-  height:120px; 
-}
-
-
-/*extras*/
-
-
-
-#wepg-extra{  
-  padding: 0;
-  min-height: 140px;
-}
-
-#wepg-extra .title{
-  font-size:14pt;
-  font-family: chivo;
-  text-align: center;
-  text-transform: uppercase;
-  min-height: 140px;
-  background: rgba(135, 85, 105, 1);
-  background: -webkit-linear-gradient(rgba(91, 54, 77, 1), rgba(135, 85, 105, 1));
-  background: -moz-linear-gradient(rgba(91, 54, 77, 1), rgba(135, 85, 105, 1));
-  background: -o-linear-gradient(rgba(91, 54, 77, 1), rgba(135, 85, 105, 1));   
-}
-
-
-
-#wepg-extra .item{
-  text-align: center;
+#wepg-navmain .dropdown-menu li a{
+  font-family: arial;
+  font-weight: normal;
   font-size: 12pt;
-  font-family:Georgia;
-  padding: 5px;
-  color: rgba(91, 54, 77, 1); 
-  min-height: 140px;
-  background: transparent;
+  color: #000; 
 }
 
-
-#wepg-extra .item img{
-  width: 50%;
-  height: 90px;
-  text-align: center;
-  margin: auto;
-  display: block;
-}
-
-#wepg-extra .item a{
-  padding: 5px;
-  float: right;
-  color: rgba(91, 54, 77, 1)
-}
-
-
-#wepg-panelleft{
-  border-radius: 6px;
-  border: 1px solid rgba(238, 200, 101, 0.7);
-  background: rgba(238, 200, 101, 0.7);
- 
-}
-
-#wepg-publi{
-  min-height: 230px;
-  background: transparent;
-}
-#wepg-publi .title{
-  background: transparent;
+#wepg-navmain .dropdown-menu li a:hover {
+  background: rgba(127, 56, 100, 0.8); 
   color: #fff;
-  border-bottom: 3px solid #fff;
 }
 
-/*promociones*/
 
-#wepg-promo{
-  min-height: 230px;
+
+
+
+
+/*Nuestros Sitios (#wepg-sitios)  */
+#wepg-sitios{
+  background: transparent;
+  padding: 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
-/*footer*/
+#wepg-sitios .wepg-title{
+  font-family: arial;
+  font-size: 15pt;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0 0 7px 0;
+  background: rgba(127, 56, 100, 0.8); 
+  min-height: 150px;
+  padding: 10px 5px;
+
+  -webkit-box-shadow: 11px 6px 223px 5px rgba(0,0,0,0.75);
+-moz-box-shadow: 11px 6px 223px 5px rgba(0,0,0,0.75);
+box-shadow: 11px 6px 223px 5px rgba(0,0,0,0.75);
+
+}
+
+#wepg-sitios .wepg-item{
+  background: #fff;
+  padding-top: 0;
+  min-height: 150px;
+}
+
+/*Anuncios (#wepg-anuncios)  */
+
+#wepg-anuncios{
+  margin-bottom: 25px;
+  border-top: 1px solid rgba(127, 56, 100, 0.4);
+  background: transparent;
+}
+#wepg-anuncios .wepg-title{  
+  font-family: arial;
+  font-size:large;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: rgba(127, 56, 100, 0.6);
+  padding: 0 0 7px 0;
+}
+
+/*Anuncios (#wepg-anuncios)  */
+
+#wepg-noticias{
+  margin-bottom: 10px;
+  border-top: 1px solid rgba(127, 56, 100, 0.4);
+  background: transparent;
+}
+#wepg-noticias .wepg-title{  
+  font-family: arial;
+  font-size:large;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: rgba(127, 56, 100, 0.6);
+  padding: 0 0 7px 0;
+}
+
+
+
+/*footer (#wepg-footer) */
 #wepg-footer{
   padding: 10px 0;
   margin-top: 20px;
@@ -328,56 +179,3 @@ body{
   border-bottom: 1px solid #1f1d1d;
 }
 
-
-.icosocial ul{
-  list-style-type:none;
-  list-style-position:inherit;
-  padding: 0;
-}
-.icosocial li{
-  display:inline-block;
-  margin:0 0 0 15px;
-}
-.icosocial a{
-  display:block;
-  width:40px;
-  height:40px;
-  background-color: transparent;
-  background-image:url(../img/icosociales.png);
-}
-.icosocial a span{
-  display:none; 
-}
-.icosocial #face{background-position:0 0}
-.icosocial #gog{background-position:-40px 0}
-.icosocial #twit{background-position:-80px 0}
-.icosocial #you{background-position:-120px 0}
-
-
-.icosocial #face:hover{background-position:0 40px}
-.icosocial #gog:hover{background-position:-40px 40px}
-.icosocial #twit:hover{background-position:-80px 40px}
-.icosocial #you:hover{background-position:-120px 40px}
-
-.icono ul{
-  list-style-type:none;
-  list-style-position:inherit;
-  padding: 10px 10px;
-}
-.icono li{
-  display:inline-block;
-  margin:0 15px 0 0;
-}
-
-
-.icono div{
-  height: 30px;
-  width: 30px;
-  background-image: url(../img/iconos.png);
-}
-.icono #ico-reloj{background-position:0 0}
-.icono #ico-mail{background-position:-30px 0}
-.icono #ico-telf{background-position:-60px 0}
-.icono #ico-video{background-position:-90px 0}
-.icono #ico-book{background-position:-120px 0}
-.icono #ico-img{background-position:-150px 0}

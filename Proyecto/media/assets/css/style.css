@@ -13,19 +13,21 @@ body{
   background: rgba(127, 56, 100, 0.05);
 }
 
-
-.wepg-panel{
-  background-color: #b3b3b3;
-  border-radius: 4px;
-  padding: 8px 8px;
-}
-
 /*Estilos de componentes de la web*/
 /*Header (#wepg-header)  */
 #wepg-header{
   padding-bottom: 5px;
   padding-top: 5px;
   background: #fff;
+}
+
+/*Naveagcion superior (#wepg-navtop)  */
+#wepg-navtop{
+  background: #fff;
+  border-bottom:1px solid rgba(57, 2, 26, 0.3);
+  -webkit-box-shadow:  0px 2px 24px 0px rgba(57, 2, 26, 0.3);
+  -moz-box-shadow:  0px 2px 24px 0px  rgba(57, 2, 26, 0.3);
+  box-shadow:  0px 2px 24px 0px  rgba(57, 2, 26, 0.3);
 }
 
 /*Encabezado (#wepg-encabezado)  */
@@ -38,20 +40,27 @@ body{
 
 #wepg-navmain > ul{
   width: 100%;
-  padding: 2px 2px;
+  padding: 5px 5px; 
+  border-top: 3px solid rgba(147, 4, 65, 1);
+  border-bottom: 3px solid rgba(147, 4, 65, 1);
   background: rgba(95, 3, 43, 1);
-  border-top: 5px solid rgba(147, 4, 65, 1);
-  border-bottom: 5px solid rgba(147, 4, 65, 1);
 }
 
-#wepg-navmain ul li a{
+#wepg-navmain > ul li a{
   font-family: arial;
-  font-size: 13pt;
-  font-weight: bold;  
+  font-size: 12pt;
+  font-weight: normal;  
   color: #fff;
+  padding: 7px 15px;
 }
+
+#wepg-navmain .nav-pills > li a:hover, #wepg-navmain .nav-pills > li a:focus{
+  background: rgba(147, 4, 65, 0.8);
+}
+
 #wepg-navmain .dropdown-menu {
   padding: 5px 5px;
+  margin-top: 5px;
 }
 
 #wepg-navmain .dropdown-menu li a{
@@ -60,9 +69,14 @@ body{
   font-size: 12pt;
   color: #000; 
 }
+#wepg-navmain .dropdown a .caret {
+  border-top-color: #fff;
+  border-bottom-color: #fff;
+}
 
 #wepg-navmain .dropdown-menu li a:hover {
-  background: rgba(127, 56, 100, 0.8); 
+  background: rgba(95, 3, 43, 1); 
+  border-radius: 4px;
   color: #fff;
 }
 
@@ -72,35 +86,46 @@ body{
 
 
 /*Nuestros Sitios (#wepg-sitios)  */
-#wepg-sitios{
-  background: transparent;
+#wepg-sitios{  
+  border-radius: 3px;
   padding: 0;
-  margin-bottom: 10px;
+  min-height: 130px;
   margin-top: 10px;
+  background: rgba(233, 212, 179, 1);
+  border: 1px solid rgba(193, 158, 103, 0.6);
+}
+
+#wepg-sitios li {
+  float:left;
+  display:block; 
+  padding:10px 10px; 
+  margin:0; 
+  width:25%; 
 }
 
 #wepg-sitios .wepg-title{
   font-family: arial;
   font-size: 15pt;
   font-weight: normal;
-  text-align: center;
   text-transform: uppercase;
   color: #fff;
-  padding: 0 0 7px 0;
-  background: rgba(127, 56, 100, 0.8); 
-  min-height: 150px;
-  padding: 10px 5px;
-
-  -webkit-box-shadow: 11px 6px 223px 5px rgba(0,0,0,0.75);
--moz-box-shadow: 11px 6px 223px 5px rgba(0,0,0,0.75);
-box-shadow: 11px 6px 223px 5px rgba(0,0,0,0.75);
+  min-height: 130px;
+  
+  background: rgba(243,226,199,1);
+background: -moz-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 88%, rgba(182,141,76,1) 88%, rgba(233,212,179,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(243,226,199,1)), color-stop(88%, rgba(193,158,103,1)), color-stop(88%, rgba(182,141,76,1)), color-stop(100%, rgba(233,212,179,1)));
+background: -webkit-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 88%, rgba(182,141,76,1) 88%, rgba(233,212,179,1) 100%);
+background: -o-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 88%, rgba(182,141,76,1) 88%, rgba(233,212,179,1) 100%);
+background: -ms-linear-gradient(left, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 88%, rgba(182,141,76,1) 88%, rgba(233,212,179,1) 100%);
+background: linear-gradient(to right, rgba(243,226,199,1) 0%, rgba(193,158,103,1) 88%, rgba(182,141,76,1) 88%, rgba(233,212,179,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3', GradientType=1 );
 
 }
 
 #wepg-sitios .wepg-item{
-  background: #fff;
-  padding-top: 0;
-  min-height: 150px;
+  background: transparent;
+  padding-top: 5px;
+  min-height: 130px;
 }
 
 /*Anuncios (#wepg-anuncios)  */
@@ -150,7 +175,7 @@ box-shadow: 11px 6px 223px 5px rgba(0,0,0,0.75);
 #wepg-footer h1{
   font-size: 13.5pt;
   font-weight:normal;
-  color: #993434;
+  color: rgba(147, 4, 65, 0.8);
 }
 #wepg-footer .wepg-navinf ul{
   list-style-position:inherit;
@@ -182,4 +207,54 @@ box-shadow: 11px 6px 223px 5px rgba(0,0,0,0.75);
 #wepg-footer .wepg-moreinf .icosocial{
   border-bottom: 1px solid #1f1d1d;
 }
+
+
+/* estilos generales propios*/
+
+/* paneles .wepg-panel*/
+.wepg-panel{
+  background-color: #b3b3b3;
+  border-radius: 4px;
+  padding: 8px 8px;
+}
+
+/* circulos */
+.wepg-circle{
+  height: 90px;
+  width: 90px;
+  border-radius: 100%;
+  background: rgba(237, 174, 39, 1);
+  margin: auto;
+}
+
+/*Iconos Sociales (#.icosocial)  */
+.icosocial ul{
+  list-style-type:none;
+  list-style-position:inherit;
+  padding: 0;
+}
+.icosocial li{
+  display:inline-block;
+  margin:0 0 0 15px;
+}
+.icosocial a{
+  display:block;
+  width:40px;
+  height:40px;
+  background-color: transparent;
+  background-image:url(../img/icosociales.png);
+}
+.icosocial a span{
+  display:none; 
+}
+.icosocial #face{background-position:0 0}
+.icosocial #gog{background-position:-40px 0}
+.icosocial #twit{background-position:-80px 0}
+.icosocial #you{background-position:-120px 0}
+
+.icosocial #face:hover{background-position:0 40px}
+.icosocial #gog:hover{background-position:-40px 40px}
+.icosocial #twit:hover{background-position:-80px 40px}
+.icosocial #you:hover{background-position:-120px 40px}
+
 

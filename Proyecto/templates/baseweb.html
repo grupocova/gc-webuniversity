@@ -29,7 +29,7 @@
   <header id="wepg-header">
 
     <!-- Navegacion Superior -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">      
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation" id="wepg-navtop">      
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-wepgmain">
@@ -38,13 +38,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Inicio</a>
+        <a class="navbar-brand" href="#"><img src="/media/assets/img/letra.png"></a>
       </div>
 
       
       <div class="collapse navbar-collapse navbar-wepgmain">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Aula Virtual</a></li>
+          <li><a href="#">Aula Virtual</a></li>
           <li><a href="#">Mapa del Sitio</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Idioma <b class="caret"></b></a>
@@ -111,7 +111,7 @@
   </header>
   
   <!-- principal -->
-<div class="container">
+<div class="">
   {% placeholder wepg_contenido %}
   {% block wepg_contenido %}{% endblock %} 
 </div>

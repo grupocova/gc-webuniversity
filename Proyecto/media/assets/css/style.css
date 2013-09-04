@@ -36,15 +36,19 @@ body{
 
 /*navegacion principal (#wepg-navmain)  */
 
-#wepg-navmain{
-
+#wepg-navmain > ul{
+  width: 100%;
+  padding: 2px 2px;
+  background: rgba(95, 3, 43, 1);
+  border-top: 5px solid rgba(147, 4, 65, 1);
+  border-bottom: 5px solid rgba(147, 4, 65, 1);
 }
 
 #wepg-navmain ul li a{
   font-family: arial;
   font-size: 13pt;
   font-weight: bold;  
-  color: #7f3864;
+  color: #fff;
 }
 #wepg-navmain .dropdown-menu {
   padding: 5px 5px;

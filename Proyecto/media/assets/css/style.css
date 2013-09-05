@@ -83,14 +83,17 @@ body{
   color: #fff;
 }
 
-
-
-
-
+#wepg-anuncios{
+  margin:10px 0; 
+  border:1px solid rgba(0, 0, 0, 0.1); 
+  padding:5px;
+  background: #fff;
+}
 
 /*Nuestros Sitios (#wepg-sitios)  */
 #wepg-sitios{  
  margin:10px 0;
+
 }
 
 
@@ -128,25 +131,26 @@ box-shadow: inset 0px 0px 27px -11px rgba(166,28,49,1);
   border-left:1px solid rgba(196,68,90,0.4); 
   min-height:130px; 
   padding:10px 10px;
+  background: #fff;
 }
 
-/*Anuncios (#wepg-anuncios)  */
+/*contenido (#wepg-cont)  */
 
-#wepg-anuncios .wepg-title a{   
+#wepg-cont .wepg-title a{   
   background: rgba(235, 169, 28, 1);
 }
 
-#wepg-anuncios .wepg-title{ 
+#wepg-cont .wepg-title{ 
   border-bottom: 2px solid rgba(235, 169, 28, 1); 
 }
-#wepg-anuncios .wepg-title h5
+#wepg-cont .wepg-title h5
 { 
   color: rgba(235, 169, 28, 0.5); 
   font-weight: bold;
   font-size: 12pt;
 }
 
-/*Noticias (#wepg-anuncios)  */
+/*Noticias (#wepg-cont)  */
 
 #wepg-noticias .wepg-title a{   
   background: rgba(21, 87, 73, 1);
@@ -161,18 +165,18 @@ box-shadow: inset 0px 0px 27px -11px rgba(166,28,49,1);
 }
 
 /*Noticias y anuncios  */
-#wepg-noticias, #wepg-anuncios{
+#wepg-noticias, #wepg-cont{
   margin-bottom: 10px;
   background: #fff;
 }
 
-#wepg-noticias .wepg-title, #wepg-anuncios .wepg-title{    
+#wepg-noticias .wepg-title, #wepg-cont .wepg-title{    
   padding: 5px 7px;
   margin-bottom: 10px;
   height: auto;
 }
 
-#wepg-noticias .wepg-title a, #wepg-anuncios .wepg-title a{ 
+#wepg-noticias .wepg-title a, #wepg-cont .wepg-title a{ 
   font-family: arial;
   font-size:large;
   font-weight: bold;
@@ -224,7 +228,7 @@ box-shadow: 6px 6px 0px -4px rgba(76, 66, 87, 0.3);
 
 /*footer (#wepg-footer) */
 #wepg-footer{
-  padding: 10px 0;
+  padding: 10px 0 0 0;
   margin-top: 20px;
   border-top: 1px solid #e5e5e5;
   background: -webkit-linear-gradient(#212121, #161616);
@@ -235,7 +239,8 @@ box-shadow: 6px 6px 0px -4px rgba(76, 66, 87, 0.3);
 #wepg-footer h1{
   font-size: 13.5pt;
   font-weight:normal;
-  color: rgba(165, 28, 48, 1);
+  text-transform: uppercase;
+  color: rgba(126, 16, 32, 1);
 }
 #wepg-footer .wepg-navinf ul{
   list-style-position:inherit;

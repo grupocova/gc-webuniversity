@@ -14,12 +14,12 @@
     <div class="carousel-inner">
       <div class="item active">
        <!--  {% placeholder wepg_slide01 %} -->
-        <img src="/media/fotos/slide03.png" alt="">
+        <img src="/media/cms_page_media/fotos/slide03.png" alt="">
       </div>
       
       <div class="item"> 
         <!-- {% placeholder wepg_slide02 %} -->
-        <img src="/media/fotos/slide02.png" alt="">      
+        <img src="/media/cms_page_media/fotos/slide02.png" alt="">      
       </div>      
     </div> 
 
@@ -36,43 +36,11 @@
 <div class="container">  
 
   <div class="row">
-    <div class="col-lg-8">
-      <div class="media" id="wepg-anuncios" >
-        <a class="pull-left" href="#">
-          <img class="media-object img-thumbnail" data-src="holder.js/400x150">
-        </a>
-        <div class="media-body">
-          <h4 class="media-heading">Doctorado en Educacion</h4>
-            ...
-        </div>
-      </div>
-      
-    </div>
-
-    <div class="col-lg-4">
-      <div id="wepg-sitios">
-        <ul id="myTab" class="nav nav-tabs">
-          <li class="active" ><a href="#home" data-toggle="tab">Aula Virtual</a></li>
-          <li><a href="#profile" data-toggle="tab">Multimedia</a></li>    
-        </ul>
-        <div id="myTabContent" class="tab-content" >
-          <div class="tab-pane fade in active" id="home">
-            {% placeholder wepg_item1 %} 
-          </div>
-          <div class="tab-pane fade" id="profile">
-            {% placeholder wepg_item2 %} 
-          </div>      
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
     <!--panel izquierdo-->
     <div class="col-lg-8" >
 
     <!--Anuncios secundarios-->
-    <div class="wepg-panel" id="wepg-cont">
+    <div class="wepg-panel" id="wepg-anuncios">
       <div class="wepg-title">        
         <h5><a>Anuncios</a>Anuncios Secundarios                          
         </h5>
@@ -95,26 +63,127 @@
     </div> 
 
     </div>
-
-      
+   
 
     <!--panel derecho-->
     <div class="col-lg-4">
     <div id="wepg-panelright" class="wepg-panel">
 
+    <div id="wepg-sitios">
+        <ul id="myTab" class="nav nav-tabs">
+          <li class="active" ><a href="#home" data-toggle="tab">Aula Virtual</a></li>
+          <li><a href="#profile" data-toggle="tab">Multimedia</a></li>    
+        </ul>
+        <div id="myTabContent" class="tab-content" >
+          <div class="tab-pane fade in active" id="home">
+            {% placeholder wepg_item1 %} 
+          </div>
+          <div class="tab-pane fade" id="profile">
+            {% placeholder wepg_item2 %} 
+          </div>      
+        </div>
+      </div>
+
     <!--Eventos- calendario-->  
     <div class="" id="wepg-event">
-      <div class="wepg-title">Agenda</div>
+      <div class="wepg-title">
+        <h5><a>Agenda</a>subtitulos</h5>
+      </div>
       <div>
-        {% placeholder wepg_agendaCont %} 
+        {% placeholder wepg_agendaCont %}
+
+        <div id="amazingcarousel-1">
+        <div class="amazingcarousel-list-container" style="">
+          <ul class="amazingcarousel-list">
+
+          <li class="amazingcarousel-item">
+            <div class="amazingcarousel-item-container">
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <div class="idate media-object">
+                    <div class="idate-day">19</div>
+                    <div class="idate-month">Feb</div>                    
+                  </div>
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Doctorado en Administracion</h4>
+                  Inscripciones del 15 de abril al 30...
+                </div>
+              </div>            
+            </div>            
+            <div style="clear:both;"></div>    
+          </li>
+
+          <li class="amazingcarousel-item">
+            <div class="amazingcarousel-item-container">
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <div class="idate media-object">
+                    <div class="idate-day">21</div>
+                    <div class="idate-month">Abr</div>                    
+                  </div>
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Maestría en Salud Pública</h4>
+                  Inscripción Hasta el 16...
+                </div>
+              </div>            
+            </div>            
+            <div style="clear:both;"></div>    
+          </li>
+
+          <li class="amazingcarousel-item">
+            <div class="amazingcarousel-item-container">
+              <div class="media">
+                <a class="pull-left" href="#">
+                  <div class="idate media-object">
+                    <div class="idate-day">30</div>
+                    <div class="idate-month">Oct</div>                    
+                  </div>
+                </a>
+                <div class="media-body">
+                  <h4 class="media-heading">Aniversario EPG</h4>
+                  El día...
+                </div>
+              </div>            
+            </div>            
+            <div style="clear:both;"></div>    
+          </li>          
+          </ul>
+        </div>
+        <div class="amazingcarousel-prev"></div>
+        <div class="amazingcarousel-next"></div>
+      </div> 
       </div>
     </div>
 
     <!--publicaciones-->  
     <div class="" id="wepg-publish">
-      <div class="wepg-title">Publicaciones</div>
+      <div class="wepg-title">        
+        <h5><a>Publicaciones</a>subtitulo</h5>
+      </div>
       <div>
         {% placeholder wepg_publicCont %} 
+
+      <div id="amazingcarousel-3">
+        <div class="amazingcarousel-list-container">
+          <ul class="amazingcarousel-list">
+            <li class="amazingcarousel-item">
+              <div class="amazingcarousel-item-container">
+                <div class="amazingcarousel-image"><a href="/media/cms_page_media/fotos/libro1.png" title="libro1"  class="html5lightbox" data-group="amazingcarousel-3"><img src="/media/cms_page_media/fotos/libro1.png"  alt="toga_retaille_img" /></a></div>
+              </div>
+            </li>
+            <li class="amazingcarousel-item">
+              <div class="amazingcarousel-item-container">
+                <div class="amazingcarousel-image"><a href="/media/cms_page_media/fotos/libro2.png" title="libro2"  class="html5lightbox" data-group="amazingcarousel-3"><img src="/media/cms_page_media/fotos/libro2.png"  alt="paisaje" /></a></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+          <div class="amazingcarousel-prev"></div>
+          <div class="amazingcarousel-next"></div>
+      </div>
+
       </div>
     </div>
     </div>

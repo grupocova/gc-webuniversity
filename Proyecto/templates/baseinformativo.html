@@ -1,0 +1,46 @@
+
+{% extends "baseweb.html" %}
+{% load cms_tags sekizai_tags menu_tags %}
+
+{% block wepg_contenido %}  
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <ol class="breadcrumb">
+        {% block wepg_inf_breadcrumb %}  {% endblock wepg_inf_breadcrumb %}
+      </ol>      
+    </div>
+  </div>
+
+  <div class="row">    
+    <div class="col-lg-3">
+
+    <!--Navegacion-->
+    <div class="wepg-panel" id="wepg-navcont">
+      <div class="wepg-title"><h4> {% block wepg_inf_titulo %}  {% endblock wepg_inf_titulo %}</h4> </div>      
+      <ul >
+           {% block wepg_inf_navegacion %}  {% endblock wepg_inf_navegacion %}     
+      </ul>
+    </div>    
+
+    </div>      
+
+    <!--Contenido-->
+    <div class="col-lg-9">
+
+    <div class="wepg-panel" id="wepg-contenido">
+      <div class="title"><h4>{% block wepg_inf_cont_titulo %}  {% endblock wepg_inf_cont_titulo %}</h4> </div>
+      <div>
+        {% block wepg_inf_contenido %} 
+
+        {% endblock wepg_inf_contenido %}       
+      </div>
+    </div>
+
+    </div>       
+
+  </div>
+</div>
+  
+
+{% endblock wepg_contenido %}

@@ -1,0 +1,17 @@
+{% extends "baseinformativo.html" %}
+{% load cms_tags menu_tags %}
+
+  <!--breadcrumbs-->     
+  {% block wepg_inf_breadcrumb %} {% show_breadcrumb "breadcrumb_1.html" %} {% endblock wepg_inf_breadcrumb %}
+  
+  <!--Nvaegacion-->       
+  {% block wepg_inf_titulo %} {% page_attribute "title" request.current_page.get_root %} {% endblock wepg_inf_titulo %}    
+   
+  {% block wepg_inf_navegacion %} {% show_sub_menu 100 1 0 %}  {% endblock wepg_inf_navegacion %}  
+
+  <!--Contenido-->
+   
+  {% block wepg_inf_cont_titulo %} {% page_attribute "title" %} {% endblock wepg_inf_cont_titulo %}
+  {% block wepg_inf_contenido %} 
+    {% placeholder wepg_inf_contenido_detalle %} 
+  {% endblock wepg_inf_contenido %}  

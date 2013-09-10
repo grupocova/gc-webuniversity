@@ -1,0 +1,24 @@
+{% extends "baseprogdetalle.html" %}
+{% load cms_tags menu_tags %}
+
+  <!--breadcrumbs-->     
+  {% block wepg_prog_breadcrumb %} {% show_breadcrumb "breadcrumb_1.html" %} {% endblock wepg_prog_breadcrumb %}
+  
+  <!--Nvaegacion-->       
+  {% block wepg_prog_titulo %} {% page_attribute "title" request.current_page.get_root %} {% endblock wepg_prog_titulo %}    
+   
+  {% block wepg_prog_navegacion %} {% show_sub_menu 100 2 1 %}  {% endblock wepg_prog_navegacion %}      
+
+  <!--contactenos-->    
+  {% block wepg_prog_contactenos %} {% show_placeholder "wepg_contactenos" request.current_page.parent_id %} {% endblock wepg_prog_contactenos %} 
+   
+  <!--brochure-->      
+  {% block wepg_prog_brochure %} {% show_placeholder "wepg_brochure" request.current_page.parent_id %} {% endblock wepg_prog_brochure %}      
+    
+
+  <!--Contenido-->
+   
+  {% block wepg_prog_cont_titulo %} {% page_attribute "title" %} {% endblock wepg_prog_cont_titulo %}
+  {% block wepg_prog_contenido %} 
+    {% placeholder wepg_prog_contenido_detalle %} 
+  {% endblock wepg_prog_contenido %}  

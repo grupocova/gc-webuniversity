@@ -1,23 +1,15 @@
 
 {% load menu_tags %}
-
 {% for child in children %}
-	
-	{% if not child.children %}
-	<li class="{% if child.selected %}selected {% endif %}{% if child.ancestor %}ancestor{% endif %}{% if child.sibling %}sibling{% endif %}{% if child.descendant %}descendant{% endif %}">
-	<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
-	{% endif %}
 
+<li class="{% if child.selected %}selected{% endif %}{% if child.ancestor %}ancestor{% endif %}{% if child.sibling %}sibling{% endif %}{% if child.descendant %}descendant{% endif %} {% if child.children %}dropdown{% endif %} ">
+	<a href="{% if not child.children %} {{ child.attr.redirect_url|default:child.get_absolute_url }} {% endif %}" class="{% if child.children %}dropdown-toggle{% endif %}" data-toggle="{% if child.children %}dropdown{% endif %}">{{ child.get_menu_title }} {% if child.children %}<span class="caret"></span>{% endif %}  </a>
+	
 	{% if child.children %}
-	<li class="{% if child.selected %}selected {% endif %}{% if child.ancestor %}ancestor{% endif %}{% if child.sibling %}sibling{% endif %}{% if child.descendant %}descendant{% endif %} dropdown">
-	<a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}" class="dropdown-toggle" data-toggle="dropdown">{{ child.get_menu_title }}
-		<span class="caret"></span>
-	</a>
     <ul class="dropdown-menu">
         {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
     </ul>
     {% endif %}
-
 </li>
 {% endfor %}
 

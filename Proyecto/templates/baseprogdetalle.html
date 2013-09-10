@@ -1,0 +1,65 @@
+
+{% extends "baseweb.html" %}
+{% load cms_tags sekizai_tags menu_tags %}
+
+{% block wepg_contenido %}  
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <ol class="breadcrumb">
+        {% block wepg_prog_breadcrumb %}  {% endblock wepg_prog_breadcrumb %}
+      </ol>      
+    </div>
+  </div>
+
+  <div class="row">    
+    <div class="col-lg-3">
+
+    <!--Navegacion-->
+    <div class="wepg-panel" id="wepg-navcont">
+      <div class="wepg-title"><h4> {% block wepg_prog_titulo %}  {% endblock wepg_prog_titulo %}</h4> </div>      
+      <ul >
+           {% block wepg_prog_navegacion %}  {% endblock wepg_prog_navegacion %}     
+      </ul>
+    </div>    
+
+    </div>      
+
+    <!--Contenido-->
+    <div class="col-lg-6">
+
+    <div class="wepg-panel" id="wepg-contenido">
+      <div class="title"><h4>{% block wepg_prog_cont_titulo %}  {% endblock wepg_prog_cont_titulo %}</h4> </div>
+      <div>
+        {% block wepg_prog_contenido %} 
+
+        {% endblock wepg_prog_contenido %}       
+      </div>
+    </div>
+
+    </div>  
+
+    <div class="col-lg-3">
+    <!--contactenos-->
+    <div class="wepg-panel" id="wepg-contact">
+      <div class="wepg-title"><h4>Contactenos</h4> </div>
+      <div class="">  
+         {% block wepg_prog_contactenos %}  {% endblock wepg_prog_contactenos %}
+      </div>
+    </div>
+
+    <!--Brochure-->
+    <div class="wepg-panel" id="wepg-brochure">
+      <div class="wepg-title"><h4>Brochure</h4> </div>
+      <div class="">        
+         {% block wepg_prog_brochure %}  {% endblock wepg_prog_brochure %}      
+      </div>
+    </div>    
+
+    </div>     
+
+  </div>
+</div>
+  
+
+{% endblock wepg_contenido %}

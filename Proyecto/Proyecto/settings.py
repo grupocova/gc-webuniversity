@@ -138,9 +138,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 CMS_TEMPLATES = (
     ('template_1.html', 'Template One'),
-    ('template_2.html', 'Template Two'),
     ('template_home.html', 'Template Home'),
-    ('template_contenido.html', 'Template Contenido'),
+    ('temp_programa.html', 'Template Programas'),
+    ('temp_programa_detalle.html', 'Template Detalle de Programas'),
+    ('temp_informativo.html', 'Template Informativo'),
 )
 
 INSTALLED_APPS = (

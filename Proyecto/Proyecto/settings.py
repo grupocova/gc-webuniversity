@@ -141,7 +141,11 @@ CMS_TEMPLATES = (
     ('template_home.html', 'Template Home'),
     ('temp_programa.html', 'Template Programas'),
     ('temp_programa_detalle.html', 'Template Detalle de Programas'),
+    ('temp_menciones.html', 'Template Menciones'),
+    ('temp_mencion_inicio.html', 'Template Menciones Inicio'),
+    ('temp_mencion_detalle.html', 'Template detalle de Menciones '),
     ('temp_informativo.html', 'Template Informativo'),
+    ('temp_categoria.html', 'Template Categoria'),
 )
 
 INSTALLED_APPS = (

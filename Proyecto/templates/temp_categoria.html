@@ -1,0 +1,21 @@
+{% extends "basecategoria.html" %}
+{% load cms_tags menu_tags %}
+
+  <!--breadcrumbs-->     
+  {% block wepg_category_breadcrumb %} {% show_breadcrumb %} {% endblock wepg_category_breadcrumb %}
+  
+  <!--Nvaegacion-->       
+  {% block wepg_panel_titulo %}  {% endblock wepg_panel_titulo %}     
+      
+  {% block wepg_category_panel %}  {% endblock wepg_category_panel %}      
+
+  <!--Contenido-->
+   
+  {% block wepg_category_cont_titulo %} {% page_attribute "title" %} {% endblock wepg_category_cont_titulo %}
+  {% block wepg_category_contenido %} 
+    {% placeholder wepg_category_contenido %} 
+
+    {% show_sub_menu 1 1 100 %} 
+
+  {% endblock wepg_category_contenido %}       
+  

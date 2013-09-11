@@ -1,13 +1,13 @@
-{% extends "baseprogdetalle.html" %}
+{% extends "baseprogramas.html" %}
 {% load cms_tags menu_tags %}
 
   <!--breadcrumbs-->     
-  {% block wepg_prog_breadcrumb %} {% show_breadcrumb "breadcrumb_1.html" %} {% endblock wepg_prog_breadcrumb %}
+  {% block wepg_prog_breadcrumb %} {% show_breadcrumb %} {% endblock wepg_prog_breadcrumb %}
   
   <!--Nvaegacion-->       
-  {% block wepg_prog_titulo %} {% page_attribute "title" request.current_page.get_root %} {% endblock wepg_prog_titulo %}    
+  {% block wepg_prog_titulo %}{% endblock wepg_prog_titulo %}    
    
-  {% block wepg_prog_navegacion %} {% show_sub_menu 100 2 1 %}  {% endblock wepg_prog_navegacion %}      
+  {% block wepg_prog_navegacion %} {% show_sub_menu 1 2 1 %}  {% endblock wepg_prog_navegacion %}      
 
   <!--contactenos-->    
   {% block wepg_prog_contactenos %} {% show_placeholder "wepg_contactenos" request.current_page.parent_id %} {% endblock wepg_prog_contactenos %} 

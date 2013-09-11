@@ -1,4 +1,4 @@
-{% extends "baseprogramas.html" %}
+{% extends "basemension.html" %}
 {% load cms_tags menu_tags %}
 
   <!--breadcrumbs-->     
@@ -7,14 +7,7 @@
   <!--Nvaegacion-->       
   {% block wepg_prog_titulo %} {% endblock wepg_prog_titulo %}    
    
-  {% block wepg_prog_navegacion %} {% show_sub_menu 1 None 0 %}  {% endblock wepg_prog_navegacion %}      
-
-  <!--contactenos-->    
-  {% block wepg_prog_contactenos %} {% stack wepg_contactenos %} {% endblock wepg_prog_contactenos %} 
-   
-  <!--brochure-->      
-  {% block wepg_prog_brochure %} {% stack wepg_brochure %}  {% endblock wepg_prog_brochure %}      
-    
+  {% block wepg_prog_navegacion %} {% show_sub_menu 1 4 1 %}  {% endblock wepg_prog_navegacion %}    
 
   <!--Contenido-->
    
@@ -22,7 +15,7 @@
   {% block wepg_prog_contenido %} 
     {% placeholder wepg_prog_contenido %} 
 
-    {% show_sub_menu 100 1 100 %} 
+    
 
   {% endblock wepg_prog_contenido %}       
   

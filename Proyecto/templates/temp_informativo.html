@@ -2,7 +2,7 @@
 {% load cms_tags menu_tags %}
 
   <!--breadcrumbs-->     
-  {% block wepg_inf_breadcrumb %} {% show_breadcrumb "breadcrumb_1.html" %} {% endblock wepg_inf_breadcrumb %}
+  {% block wepg_inf_breadcrumb %} {% show_breadcrumb %} {% endblock wepg_inf_breadcrumb %}
   
   <!--Nvaegacion-->       
   {% block wepg_inf_titulo %} {% page_attribute "title" request.current_page.get_root %} {% endblock wepg_inf_titulo %}    

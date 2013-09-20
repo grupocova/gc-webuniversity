@@ -134,6 +134,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'cms.context_processors.media',
     'sekizai.context_processors.sekizai',
+    'zinnia.context_processors.version',
 )
 
 CMS_TEMPLATES = (
@@ -153,6 +154,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
+    'django.contrib.comments',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cms', 
@@ -161,6 +163,10 @@ INSTALLED_APPS = (
     'menus', 
     'south', 
     'sekizai', 
+    
+    'tagging',
+    'zinnia',
+
     'djangocms_admin_style', 
     'django.contrib.messages',
     # Uncomment the next line to enable the admin:
@@ -174,6 +180,7 @@ INSTALLED_APPS = (
     'cms.plugins.teaser',
     'djangocms_text_ckeditor', # note this needs to be above the 'cms' entry
     'cms.plugins.video',
+    'cmsplugin_zinnia',
     #'cms.plugins.twitter',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',

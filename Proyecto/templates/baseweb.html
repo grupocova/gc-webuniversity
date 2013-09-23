@@ -68,7 +68,7 @@
     </nav>
     <!-- Fin Navegacion Superior -->
 
-    <div class="container" >
+    <div class="container" style="background:#fff;" >
       <!-- Encabezado -->
       <div class="row" id="wepg-encabezado">
         <div class="col-lg-9">
@@ -95,25 +95,24 @@
         <div class="col-lg-12" id="wepg-navmain">
           <ul class="nav nav-pills pull-right">
             {% show_menu 0 1 100 100 "menu_1.html" %}           
-          </ul> 
-        
+          </ul>        
         </div>
-
-  <!-- Fin Navegacion --> 
-    </div>
+      <!-- Fin Navegacion --> 
+      </div>
     </div> 
 
   </header>
   
   <!-- principal -->
-<div class=""> 
+<div class="" > 
   {% block wepg_contenido %}{% endblock %} 
-</div>
 
-<div class="container">
-  <div class="wepg-panel" id="wepg-links">
-    <h5>LINKS DE INTERES</h5>
-  </div>   
+  <div class="container">
+    <div class="wepg-panel" id="wepg-links">
+      <h5>LINKS DE INTERES</h5>
+    </div>   
+  </div>
+
 </div>
 
   <!-- footer-->

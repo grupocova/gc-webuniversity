@@ -6,7 +6,9 @@
 	position:relative;
 	width:100%;
 	margin:0px auto 0px;
-	background: transparent;		
+	background: transparent;
+	min-height: 230px;	
+	max-height: 600px;	
 }
 
 #amazingcarousel-3 .amazingcarousel-image {	
@@ -78,14 +80,14 @@
 
 #amazingcarousel-3 .amazingcarousel-prev {
 	right: 0%;
-	top: 100%;
+	top: -17%;
 	margin-right: 32px;
 	
 }
 
 #amazingcarousel-3 .amazingcarousel-next {
 	right: 0%;
-	top: 100%;
+	top: -17%;
 	margin-right: 0px;
 	
 }

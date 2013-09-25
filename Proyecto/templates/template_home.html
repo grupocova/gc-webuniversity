@@ -8,17 +8,20 @@
     <ol class="carousel-indicators">
       <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
       <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
     </ol>
 
 
     <div class="carousel-inner">
       <div class="item active">
-       <!--  {% placeholder wepg_slide01 %} -->
+        <img src="/media/cms_page_media/fotos/slide01.png" alt="">
+      </div>
+
+      <div class="item">
         <img src="/media/cms_page_media/fotos/slide03.png" alt="">
       </div>
       
       <div class="item"> 
-        <!-- {% placeholder wepg_slide02 %} -->
         <img src="/media/cms_page_media/fotos/slide02.png" alt="">      
       </div>      
     </div> 
@@ -41,22 +44,16 @@
 
     <!--Anuncios secundarios-->
     <div class="wepg-panel" id="wepg-anuncios">
-      <div class="wepg-title">        
-        <h5><a>Anuncios</a>Anuncios Secundarios                          
-        </h5>
-                   
-      </div>
+      <div class="wepg-title"><h5><a>Anuncios</a>Anuncios Secundarios</h5></div>
       <div class=""> 
+        anuncio1
         {% placeholder wepg_anunImagen %} 
-      </div>
-           
+      </div>           
     </div>
 
     <!--Noticias--> 
     <div class="wepg-panel" id="wepg-noticias">
-      <div class="wepg-title">
-        <h5><a>Noticias</a> Recientes acontencimientos</h5>
-      </div>
+      <div class="wepg-title"><h5><a>Noticias</a> Recientes acontencimientos</h5></div>
       <div>
         {% placeholder wepg_noticiaCont %} 
       </div>
@@ -70,26 +67,28 @@
     <div id="wepg-panelright" class="wepg-panel">
 
     <div id="wepg-sitios">
-        <ul id="myTab" class="nav nav-tabs">
-          <li class="active" ><a href="#home" data-toggle="tab">Aula Virtual</a></li>
-          <li><a href="#profile" data-toggle="tab">Multimedia</a></li>    
-        </ul>
-        <div id="myTabContent" class="tab-content" >
-          <div class="tab-pane fade in active" id="home">
-            {% placeholder wepg_item1 %} 
-          </div>
-          <div class="tab-pane fade" id="profile">
-            {% placeholder wepg_item2 %} 
-          </div>      
-        </div>
+      <ul id="myTab" class="nav nav-tabs nav-stacked" >
+        <li class="active" ><a href="#home" data-toggle="tab">Aula Virtual</a></li>
+        <li><a href="#profile" data-toggle="tab">Multimedia</a></li>    
+        <li><a href="#profile" data-toggle="tab">Sociales</a></li> 
+        <li><a href="#profile" data-toggle="tab">Inscripcion</a></li> 
+      </ul>
+      <div id="myTabContent" class="tab-content" >
+      <div class="tab-pane fade in active" id="home">
+        {% placeholder wepg_item1 %} 
       </div>
+        <div class="tab-pane fade" id="profile">
+          {% placeholder wepg_item2 %} 
+        </div>      
+      </div>
+    </div>
 
     <!--Eventos- calendario-->  
-    <div class="" id="wepg-event">
+    <div class="wepg-panel" id="wepg-event">
       <div class="wepg-title">
-        <h5><a>Agenda</a>subtitulos</h5>
+        <h4></a><span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;Agenda</h4>
       </div>
-      <div>
+      <div class="wepg-cont">
         {% placeholder wepg_agendaCont %}
 
         <div id="amazingcarousel-1">
@@ -153,16 +152,17 @@
         </div>
         <div class="amazingcarousel-prev"></div>
         <div class="amazingcarousel-next"></div>
-      </div> 
+        </div> 
+
       </div>
     </div>
 
     <!--publicaciones-->  
-    <div class="" id="wepg-publish">
-      <div class="wepg-title">        
-        <h5><a>Publicaciones</a>subtitulo</h5>
+    <div class="wepg-panel" id="wepg-publish">
+      <div class="wepg-title">
+        <h4></a><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Publicaciones</h4>
       </div>
-      <div>
+      <div class="wepg-cont">
         {% placeholder wepg_publicCont %} 
 
       <div id="amazingcarousel-3">

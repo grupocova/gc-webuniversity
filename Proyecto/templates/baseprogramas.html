@@ -2,7 +2,7 @@
 {% load cms_tags sekizai_tags menu_tags %}
 
 {% block wepg_contenido %}  
-<div class="container" style="background:#fff;">
+<div class="container">
   <div class="row">
     <div class="col-lg-12">
       <ol class="breadcrumb">
@@ -15,7 +15,7 @@
     <div class="col-lg-3">
 
     <!--Navegacion-->
-    <div class="wepg-title" id="wepg-title-nav-cont"><h4> {% block wepg_prog_titulo %}  {% endblock wepg_prog_titulo %}</h4> </div>
+    <div class="wepg-title" id="wepg-title-nav-cont"><h4><span class="glyphicon glyphicon-home"> </span>&nbsp;{% block wepg_prog_titulo %} {% endblock wepg_prog_titulo %}</h4> </div>
     <div class="wepg-panel" id="wepg-navcont">         
       <ul >
            {% block wepg_prog_navegacion %}  {% endblock wepg_prog_navegacion %}     
@@ -32,8 +32,8 @@
     <div class="col-lg-6">
 
     <div class="wepg-panel" id="wepg-contenido">
-      <div class="title"><h4>{% block wepg_prog_cont_titulo %}  {% endblock wepg_prog_cont_titulo %}</h4> </div>
-      <div>
+      <div class="wepg-title"><h4>{% block wepg_prog_cont_titulo %}  {% endblock wepg_prog_cont_titulo %}</h4> </div>
+      <div class="wepg-cont">
         {% block wepg_prog_contenido %} 
 
         {% endblock wepg_prog_contenido %}       

@@ -25,21 +25,21 @@
 	width: 100%;
 	padding: 4px;
 	min-height: 90px;
-	background: rgba(255, 255, 255, 0.07);
+	background: rgba(0, 0, 0, 0.07);
 }
 
 /* arrows */
 
 #amazingcarousel-1 .amazingcarousel-prev {
 	right: 0%;
-	top: 100%;
+	top: -17%;
 	margin-right: 32px;
 	margin-top: 8px;
 }
 
 #amazingcarousel-1 .amazingcarousel-next {
 	right: 0%;
-	top: 100%;
+	top: -17%;
 	margin-right: 0px;
 	margin-top: 8px;
 }

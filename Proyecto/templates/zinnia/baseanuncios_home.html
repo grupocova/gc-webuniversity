@@ -1,0 +1,36 @@
+{% load comments i18n zinnia_tags staticfiles %}
+
+{% if entries %}
+<div id="slider-anuncios" class="carousel slide">   
+ <!-- Wrapper for slides -->
+  <div class="carousel-inner media-list">
+  {% for entry in entries %}    
+    <div class="item {% if forloop.first %}active{% endif %} media">
+      <img class="pull-left media-object img-thumbnail" src="{% if entry.image %}{{ entry.image.url }}{% endif %}"  alt="">
+      
+      <div class="carousel-caption media-body">
+        <h4 class="media-heading">{{ entry.title }} &nbsp;&nbsp;<a href="{{ entry.get_absolute_url }}"><span class="glyphicon glyphicon-plus-sign"></span></a></h4>
+          <p>{{ entry.excerpt|safe|linebreaks|truncatewords_html:30 }}</p>
+          <p class="wepg-date">{{ entry.creation_date|date:"DATE_FORMAT" }}&nbsp;|    
+          {% with categories=entry.categories.all %}
+          {% if categories|length %}          
+          {% for category in categories %}
+          <a href="{{ category.get_absolute_url }}" rel="tag category">{{ category }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}.
+          {% endwith %}
+          </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#slider-anuncios" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#slider-anuncios" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+{% endif %}
+
+
+

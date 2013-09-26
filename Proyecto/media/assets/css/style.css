@@ -243,12 +243,36 @@ background-image: url(../img/fondo1.png);
   color: rgba(21, 87, 73, 1);
 }
 
-
 #wepg-noticias .wepg-separador{
   margin: 10px 0 0 0;
   border-top: 1px dotted rgba(0,0,0, 0.3);
 }
 
+/*Anuncios*/
+
+#wepg-anuncios .media-list .media .media-object{
+  max-width: 50%; 
+  background:rgba(235, 169, 28, 1);
+}
+
+#wepg-anuncios .media-list .media .media-body .wepg-date{
+  font-size: 9pt;
+}
+
+#wepg-anuncios .media-list .media .media-body .media-heading .glyphicon{
+  color: rgba(21, 87, 73, 1);
+}
+
+#wepg-anuncios .media-list .media .media-body{
+  background: rgba(21, 87, 73, 1);
+}
+ 
+
+
+#wepg-anuncios .wepg-separador{
+  margin: 10px 0 0 0;
+  border-top: 1px dotted rgba(0,0,0, 0.3);
+}
 
 /*panel derecho (#wepg-panelright)  */
 #wepg-panelright{

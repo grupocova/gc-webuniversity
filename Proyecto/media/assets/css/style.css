@@ -19,6 +19,11 @@ body{
 /* estilos generales propios*/
 
 /* paneles .wepg-panel*/
+.wepg-separador{
+  margin: 3px 0;
+  border-top: 1px solid #000;
+}
+
 .wepg-panel{
   background-color: #b3b3b3;
   border-radius: 4px;
@@ -226,7 +231,23 @@ background-image: url(../img/fondo1.png);
   text-decoration: none;
 }
 
+#wepg-noticias .media-list .media .media-object{
+  max-width: 25%;
+}
 
+#wepg-noticias .media-list .media .media-body .wepg-date{
+  font-size: 9pt;
+}
+
+#wepg-noticias .media-list .media .media-body .media-heading .glyphicon{
+  color: rgba(21, 87, 73, 1);
+}
+
+
+#wepg-noticias .wepg-separador{
+  margin: 10px 0 0 0;
+  border-top: 1px dotted rgba(0,0,0, 0.3);
+}
 
 
 /*panel derecho (#wepg-panelright)  */

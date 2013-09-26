@@ -149,6 +149,10 @@ CMS_TEMPLATES = (
     ('temp_categoria.html', 'Template Categoria'),
 )
 
+CMSPLUGIN_ZINNIA_TEMPLATES = [
+  ('zinnia/noticias_home.html', 'noticias_home'),
+]
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',

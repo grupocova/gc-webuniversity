@@ -152,6 +152,7 @@ CMS_TEMPLATES = (
 CMSPLUGIN_ZINNIA_TEMPLATES = [
   ('zinnia/noticias_home.html', 'noticias_home'),
   ('zinnia/anuncios_home.html', 'anuncios_home'),
+  ('zinnia/publicaciones_home.html', 'publicaciones_home'),
 ]
 
 INSTALLED_APPS = (

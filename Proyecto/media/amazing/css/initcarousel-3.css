@@ -6,7 +6,7 @@
 	position:relative;
 	width:100%;
 	margin:0px auto 0px;
-	background: transparent;
+	background: #567;
 	min-height: 230px;	
 	max-height: 600px;	
 }
@@ -14,7 +14,7 @@
 #amazingcarousel-3 .amazingcarousel-image {	
 	position: relative;
 	padding: 5px;
-	background-color: transparent;	
+	background-color: #145;	
     text-align: center;
 }
 

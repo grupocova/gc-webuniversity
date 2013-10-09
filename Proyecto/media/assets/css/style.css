@@ -251,8 +251,7 @@ background-image: url(../img/fondo1.png);
 /*Anuncios*/
 
 #wepg-anuncios .media-list .media .media-object{
-  max-width: 50%; 
-  background:rgba(235, 169, 28, 1);
+   max-width: 50%;
 }
 
 #wepg-anuncios .media-list .media .media-body .wepg-date{

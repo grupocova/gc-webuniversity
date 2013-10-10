@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-{% load cms_tags sekizai_tags menu_tags %}
+{% load cms_tags sekizai_tags menu_tags stack_tags  %}
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
 	{% render_block "css" %}
@@ -178,9 +178,10 @@
           </div>
           <div class="contactenos icono">
             <h1>Contáctenos:</h1>
-            <p>Si tiene alguna consulta o sugerencia, póngase en contacto con nosotros.</p> 
+            {% stack "contactenos" %}           
+            <!-- <p>Si tiene alguna consulta o sugerencia, póngase en contacto con nosotros.</p> 
             <div id="ico-mail"></div> <p>epgposgrado@upeu.edu.pe </p>    
-            <div id="ico-telf"></div><p>Telef: (511)618-6315 / (511)618-6316 Fax: (511)618-6339</p>
+            <div id="ico-telf"></div><p>Telef: (511)618-6315 / (511)618-6316 Fax: (511)618-6339</p> -->
           </div>
         
         </div>
@@ -193,9 +194,9 @@
     <div style="background:rgba(117, 13, 28, 0.3); min-height: 50px; color:#fff; padding:5px; font-size:9pt;">
       <div class="container">
         <img style="float:left; padding:10px 10px 10px 0;"src="/media/assets/img/minilogo_posgrado.png">
-        <small>Universidad Peruana Unión </br> 
-           © 2011 Escuela de Posgrado - Todos los derechos reservados </br>
-           Carretera Central Km. 19.0 Ñaña, Lima - Perú</small>      
+        <small>
+          {% stack "footer_creditos" %} 
+        </small>      
       </div>      
     </div> 
   </footer>

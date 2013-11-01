@@ -4,35 +4,8 @@
 {% block wepg_contenido %} 
 <div id="wepg-slider">
 <div class="container" >
-  <div id="slider-principal" class="carousel slide">
-    <ol class="carousel-indicators">
-      <li data-target="#slider-principal" data-slide-to="0" class="active"></li>
-      <li data-target="#slider-principal" data-slide-to="1"></li>
-      <li data-target="#slider-principal" data-slide-to="2"></li>
-    </ol>
-
-
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="/media/cms_page_media/fotos/slide01.png" alt="">
-      </div>
-
-      <div class="item">
-        <img src="/media/cms_page_media/fotos/slide03.png" alt="">
-      </div>
-      
-      <div class="item"> 
-        <img src="/media/cms_page_media/fotos/slide02.png" alt="">      
-      </div>      
-    </div> 
-
-    <a class="left carousel-control" href="#slider-principal" data-slide="prev">
-      <span class="icon-prev"></span>
-    </a>
-    <a class="right carousel-control" href="#slider-principal" data-slide="next">
-      <span class="icon-next"></span>
-    </a>
-  </div>
+{% placeholder wepg_slider %}
+  
 </div>
 </div> 
 
@@ -85,73 +58,10 @@
     <!--Eventos- calendario-->  
     <div class="wepg-panel" id="wepg-event">
       <div class="wepg-title">
-        <h4></a><span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;Agenda</h4>
+        <h4><span class="glyphicon glyphicon-calendar"></span>&nbsp;&nbsp;Agenda</h4>
       </div>
       <div class="wepg-cont">
-        {% placeholder wepg_agendaCont %}
-
-        <div id="amazingcarousel-1">
-        <div class="amazingcarousel-list-container" style="">
-          <ul class="amazingcarousel-list">
-
-          <li class="amazingcarousel-item">
-            <div class="amazingcarousel-item-container">
-              <div class="media">
-                <a class="pull-left" href="#">
-                  <div class="idate media-object">
-                    <div class="idate-day">19</div>
-                    <div class="idate-month">Feb</div>                    
-                  </div>
-                </a>
-                <div class="media-body">
-                  <h4 class="media-heading">Doctorado en Administracion</h4>
-                  Inscripciones del 15 de abril al 30...
-                </div>
-              </div>            
-            </div>            
-            <div style="clear:both;"></div>    
-          </li>
-
-          <li class="amazingcarousel-item">
-            <div class="amazingcarousel-item-container">
-              <div class="media">
-                <a class="pull-left" href="#">
-                  <div class="idate media-object">
-                    <div class="idate-day">21</div>
-                    <div class="idate-month">Abr</div>                    
-                  </div>
-                </a>
-                <div class="media-body">
-                  <h4 class="media-heading">Maestría en Salud Pública</h4>
-                  Inscripción Hasta el 16...
-                </div>
-              </div>            
-            </div>            
-            <div style="clear:both;"></div>    
-          </li>
-
-          <li class="amazingcarousel-item">
-            <div class="amazingcarousel-item-container">
-              <div class="media">
-                <a class="pull-left" href="#">
-                  <div class="idate media-object">
-                    <div class="idate-day">30</div>
-                    <div class="idate-month">Oct</div>                    
-                  </div>
-                </a>
-                <div class="media-body">
-                  <h4 class="media-heading">Aniversario EPG</h4>
-                  El día...
-                </div>
-              </div>            
-            </div>            
-            <div style="clear:both;"></div>    
-          </li>          
-          </ul>
-        </div>
-        <div class="amazingcarousel-prev"></div>
-        <div class="amazingcarousel-next"></div>
-        </div> 
+        {% placeholder wepg_agendaCont %}       
 
       </div>
     </div>
@@ -159,7 +69,7 @@
     <!--publicaciones-->  
     <div class="wepg-panel" id="wepg-publish">
       <div class="wepg-title">
-        <h4></a><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Publicaciones</h4>
+        <h4><span class="glyphicon glyphicon-book"></span>&nbsp;&nbsp;Publicaciones</h4>
       </div>
       <div class="wepg-cont">
         {% placeholder wepg_publicCont %} 
@@ -171,6 +81,5 @@
 
   </div> 
 </div>
-  
 
 {% endblock wepg_contenido %}

@@ -1,5 +1,5 @@
-{% extends "baseprogramas.html" %}
-{% load cms_tags menu_tags %}
+{% extends "baseprogramas.html"%}
+{% load cms_tags menu_tags stack_tags  %}
 
   <!--breadcrumbs-->     
   {% block wepg_prog_breadcrumb %} {% show_breadcrumb %} {% endblock wepg_prog_breadcrumb %}
@@ -13,7 +13,7 @@
   {% block wepg_prog_contactenos %} {% stack wepg_contactenos %} {% endblock wepg_prog_contactenos %} 
    
   <!--brochure-->      
-  {% block wepg_prog_brochure %} {% stack wepg_brochure %}  {% endblock wepg_prog_brochure %}      
+  {% block wepg_prog_brochure %} <!-- {% stack wepg_brochure %}  --> {% endblock wepg_prog_brochure %}      
     
 
   <!--Contenido-->

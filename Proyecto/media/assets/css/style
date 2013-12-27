@@ -1,0 +1,7 @@
+color_fondo = rgba(0, 0, 0, 0.1)
+
+body
+	padding-top 40px
+	background color_fondo
+
+

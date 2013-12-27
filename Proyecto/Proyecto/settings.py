@@ -155,6 +155,8 @@ CMSPLUGIN_ZINNIA_TEMPLATES = [
   ('zinnia/publicaciones_home.html', 'publicaciones_home'),
 ]
 
+#ZINNIA_ENTRY_BASE_MODEL = 'zinnia_gallery.entry_date.EntryDate'
+
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -172,6 +174,7 @@ INSTALLED_APPS = (
     
     'tagging',
     'zinnia',
+    #'zinnia_gallery',
 
     'djangocms_admin_style', 
     'django.contrib.messages',

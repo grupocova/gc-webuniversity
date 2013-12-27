@@ -1,12 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 {% load cms_tags sekizai_tags menu_tags stack_tags  %}
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<html lang="es">
 <head>
 	{% render_block "css" %}
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<meta charset="utf-8" />	
   <title>EPG | Escuela de Posgrado</title>
-
+  
 	<!-- css bootstrap -->
 	<link rel="stylesheet" type="text/css" href="/media/bootstrap3/css/bootstrap.css" />
 	<!-- <link rel="stylesheet" type="text/css" href="/media/bootstrap3/css/bootstrap.min.css" /> -->
@@ -119,8 +119,13 @@
   <footer id="wepg-footer">
     <div class="container">
       <div class="row">
+        <div class="col-lg-9 col-sm-9" >
+          <div class="row">
+            {% show_menu 0 1 100 100 "menufooter.html"%}
+          </div>
+        </div>        
 
-        <div class="col-lg-3 wepg-navinf">
+        <!-- <div class="col-lg-3 wepg-navinf">
           <div>
           <h1>Especialidades</h1>
           <ul class="">
@@ -164,9 +169,9 @@
             <li><a href="#">Teología</a></li>        
           </ul>
           </div>
-        </div>
+        </div> -->
 
-        <div class="col-lg-3 wepg-moreinf" >
+        <div class="col-lg-3 col-sm-3 wepg-moreinf" >
           <div class="icosocial">
           <h1>Síguenos en:</h1>
           <ul>

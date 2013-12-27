@@ -153,6 +153,8 @@ CMSPLUGIN_ZINNIA_TEMPLATES = [
   ('zinnia/noticias_home.html', 'noticias_home'),
   ('zinnia/anuncios_home.html', 'anuncios_home'),
   ('zinnia/publicaciones_home.html', 'publicaciones_home'),
+  ('zinnia/calendario_home.html', 'calendario_home'),
+  ('zinnia/slider_home.html', 'slider_home'),
 ]
 
 #ZINNIA_ENTRY_BASE_MODEL = 'zinnia_gallery.entry_date.EntryDate'

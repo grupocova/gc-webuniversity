@@ -1,0 +1,34 @@
+{% load comments i18n zinnia_tags staticfiles %}
+
+{% if entries %}
+<div id="amazingcarousel-1">
+  <div class="amazingcarousel-list-container" style="">
+    <ul class="amazingcarousel-list">      
+      {% for entry in entries %} 
+      <li class="amazingcarousel-item">
+        <div class="amazingcarousel-item-container">
+          <div class="media">
+            <a class="pull-left" href="{{ entry.get_absolute_url }}">
+              <div class="idate media-object">
+                <div class="idate-day">19</div>
+                <div class="idate-month">Feb</div>                    
+              </div>
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading">{{ entry.title }}</h4>
+              {{ entry.excerpt|safe|linebreaks|truncatewords_html:5 }}
+            </div>
+          </div>            
+        </div>            
+        <div style="clear:both;"></div>    
+      </li>     
+      {% endfor %}       
+    </ul>
+
+  </div>
+    <div class="amazingcarousel-prev"></div>
+    <div class="amazingcarousel-next"></div>
+</div>
+
+{% endif %}
+ 

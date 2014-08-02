@@ -1,25 +1,39 @@
 {% load comments i18n zinnia_tags staticfiles %}
+<div class="news-items">        
 {% if entries %}
-  <ul class="media-list">
-      {% for entry in entries %}
-      <li class="media"> 
-
-        <img class="pull-left media-object img-thumbnail" src="{% if entry.image %}{{ entry.image.url }}{% endif %}"  />
-        
-        <div class="media-body">
-          <h4 class="media-heading">{{ entry.title }} &nbsp;&nbsp;<a href="{{ entry.get_absolute_url }}"><span class="glyphicon glyphicon-plus-sign"></span></a></h4>
-          <p>{{ entry.excerpt|safe|linebreaks|truncatewords_html:30 }}</p>
-          <p class="wepg-date">{{ entry.creation_date|date:"DATE_FORMAT" }}&nbsp;|    
-          {% with categories=entry.categories.all %}
-          {% if categories|length %}          
-          {% for category in categories %}
-          <a href="{{ category.get_absolute_url }}" rel="tag category">{{ category }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}.
-          {% endwith %}
-          </p>
-        </div>
-      </li>
-      <div class="wepg-separador"></div>
+  {% for entry in entries %}
+  <article class="new">
+    <h3 class="title">
+        <a href="{{ entry.get_absolute_url }}"  target="_blank">{{ entry.title|truncatewords_html:10 }}</a>
+      </h3>
+    <p class="info">
+      {% with authors=entry.authors.all %}
+      {% if authors|length %}
+        <!-- {% trans "Written by" %} -->
+      {% for author in authors %}
+      <span class="author">
+        <a href="{{ author.get_absolute_url }}" class="fn url{% if not author.get_full_name %} nickname{% endif %}" rel="author"
+           title="{% blocktrans %}Show all {{ author }}'s entries{% endblocktrans %}">{{ author }}</a>
+        </span>{% if not forloop.last %}, {% endif %}       
       {% endfor %}
-  </ul>
+      {% endif %} 
+      {% endwith %}| <span class="date">{{ entry.creation_date|date:"d/m/y" }}</span>
+    </p>    
+    {% if entry.image %}
+    <figure class="img"><img src="{% if entry.image %}{{ entry.image.url }}{% endif %}" alt="{{ entry.title}}"/></figure>
+    {% endif %}           
+    <div class="content {% if not entry.image %}no-img{% endif %}"> 
+      <div class="resumen">
+        {% if entry.image %}
+        <p>{{ entry.excerpt|safe|truncatewords_html:85 }}<a class="more">Leer M&aacute;s</a></p>
+        {% else %} 
+        <p>{{ entry.excerpt|safe|truncatewords_html:95 }}<a class="more">Leer M&aacute;s</a></p>
+        {% endif %} 
+      </div>    
+    </div>    
+  </article>
+      {% endfor %}
+{% else %}
+  <p>No hay contenido publicado para esta sección</p>
 {% endif %}
-
+</div>

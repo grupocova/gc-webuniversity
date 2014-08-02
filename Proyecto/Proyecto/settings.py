@@ -55,7 +55,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = STATIC_ROOT = os.path.join(PROJECT_PATH, 'media')
+MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -66,7 +66,7 @@ MEDIA_URL = '/media/'
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/var/www/example.com/static/"
-STATIC_ROOT = STATIC_ROOT = os.path.join(PROJECT_PATH, 'static')
+STATIC_ROOT = ''
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
@@ -77,6 +77,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_PATH, 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -138,16 +139,110 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 CMS_TEMPLATES = (
-    ('template_1.html', 'Template One'),
-    ('template_home.html', 'Template Home'),
-    ('temp_programa.html', 'Template Programas'),
-    ('temp_programa_detalle.html', 'Template Detalle de Programas'),
-    ('temp_menciones.html', 'Template Menciones'),
-    ('temp_mencion_inicio.html', 'Template Menciones Inicio'),
-    ('temp_mencion_detalle.html', 'Template detalle de Menciones '),
-    ('temp_informativo.html', 'Template Informativo'),
-    ('temp_categoria.html', 'Template Categoria'),
+    ('temp_general_snav.html', 'Template General sin Navegacion'),
+    ('temp_general_cnav.html', 'Template General con Navegacion'), 
+    ('temp_contenido.html', 'Template Contenido'),    
+    ('temp_programa.html', 'Template Programas (Maestrias, Doctorados, Diplomados, ..etc)'),    
+    ('temp_home.html', 'Template Home'),
 )
+CMS_PLACEHOLDER_CONF = {
+    'noticias_home':{
+        'plugins':['CMSLatestEntriesPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'eventos_home':{
+        'plugins':['CMSLatestEntriesPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'publicaciones_home':{
+        'plugins':['CMSLatestEntriesPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'slider_destacados':{
+        'plugins':['CMSLatestEntriesPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'anuncios_home':{
+        'plugins':['CMSLatestEntriesPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'hlink_1':{
+        'plugins':['LinkPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'hlink_2':{
+        'plugins':['LinkPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'hlink_3':{
+        'plugins':['LinkPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'hlink_4':{
+        'plugins':['LinkPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'flink_1':{
+        'plugins':['LinkPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'flink_2':{
+        'plugins':['LinkPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'flink_3':{
+        'plugins':['LinkPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'flink_4':{
+        'plugins':['LinkPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'logo':{
+        'plugins':['PicturePlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+    'ubicacion':{
+        'plugins':['LinkPlugin'],
+        'limits': {
+            'global': 2,
+        },
+    },
+    'brochure':{
+        'plugins':['SnippetPlugin'],
+        'limits': {
+            'global': 1,
+        },
+    },
+}
 
 CMSPLUGIN_ZINNIA_TEMPLATES = [
   ('zinnia/noticias_home.html', 'noticias_home'),

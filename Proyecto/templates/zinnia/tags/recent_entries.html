@@ -1,0 +1,25 @@
+{% load i18n %}
+<ul>
+  {% for entry in entries %}
+  <li>
+    <h3 class="title"><a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">{{ entry.title }}</a></h3>
+    <div class="inf-entry">
+    	<span class="date">{{ entry.creation_date|date:"d M Y" }}</span> | {% with categories=entry.categories.all %}
+      {% if categories|length %}
+      
+      {% for category in categories %}
+      <a href="{{ category.get_absolute_url }}"
+         title="{% blocktrans %}Show all entries in {{ category }}{% endblocktrans %}"
+         rel="tag category">{{ category }}</a>{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %}
+      {% endwith %}
+    </div>
+  </li>
+  {% empty %}
+  <li>
+    {% trans "No entries yet." %}
+  </li>
+  {% endfor %}
+</ul>
+
+	  
+      

@@ -1,0 +1,120 @@
+{% load i18n staticfiles zinnia_tags cms_tags menu_tags%}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>EPG | Blog Institucional - {% block title %}{% endblock title %}{% block title-page %}{% endblock title-page %}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="public" />
+    <meta name="robots" content="follow, all" />
+    <meta name="language" content="{{ LANGUAGE_CODE }}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <meta name="description" content="{% block meta-description %}{% trans "Just another Zinnia weblog." %}{% endblock meta-description %}{% block meta-description-page %}{% endblock meta-description-page %}" />
+    <meta name="keywords" content="{% block meta-keywords %}django, blog, weblog, zinnia{% endblock meta-keywords %}" />
+    <meta name="author" content="Fantomas42" />
+    {% block meta %}{% endblock meta %}
+    <link rel="pingback" href="/xmlrpc/" />
+    <link rel="shortcut icon" href="{% static "zinnia/img/favicon.ico" %}" />
+    <link rel="home" href="{% url 'zinnia_entry_archive_index' %}" />
+    <!-- <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/css/screen.css" %}" />
+    <link rel="stylesheet" type="text/css" media="print" href="{% static "zinnia/css/print.css" %}" /> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300&amp;subset=latin,latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "assets/css/bootstrap.css" %}" />
+    <link rel="stylesheet" href="{% static "zinnia/css/styleblog.css" %}" />
+    <!--[if lt IE 8]>
+        <link rel="stylesheet" type="text/css" media="screen, projection" href="{% static "zinnia/css/ie.css" %}" />
+    <![endif]-->
+    {% block link %}{% endblock link %}
+    {% block script %}{% endblock script %}
+  </head>
+  <body class="">
+  	<header>
+      <div class="container">
+        <div class="logo">
+          <!-- <figure>
+            <a href="{% url 'zinnia_entry_archive_index' %}" title="Blog Institucional" rel="home"><img src="{% static "assets/img/logoupeub.png" %}" /></a>
+          </figure> -->
+          <a href="{% url 'zinnia_entry_archive_index' %}" title="BlogEPG" rel="home"><span class="name-blog">Blog</span><span class="name-epg">EPG</span></a>
+        </div>    
+        <div class="navsup">
+          <!-- <span>ESCUELA <span>DE</span> POSGRADO</span> -->
+          <ul>
+            <li><a href="">EPG</a></li>
+            <li><a href="">Campus Virtual</a></li>
+          </ul> 
+        </div>                                               
+      </div>
+    </header> 
+    <nav>
+          {% block navigation_category %}
+            {% get_categories %}
+          {% endblock navigation_category  %}
+    </nav>    
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 col-pan-l" style="">        
+          <div class="panel-fijo">
+            <!-- <a href="{% url 'zinnia_sitemap' %}" title="{% trans "Sitemap" %}" class="sitemap">{% trans "Sitemap" %}</a>
+            <a href="{% url 'zinnia_entry_latest_feed' %}" title="{% trans "RSS Feed of latest entries" %}" class="feeds">{% trans "RSS Feed" %}</a> -->
+            <form method="get" action="{% url 'zinnia_entry_search' %}" class="search">
+              <!-- <label>Search</label> -->
+              <div class="input-group">
+                <input type="text" value="{% trans "Keywords..." %}" name="pattern" onfocus="this.value=''" class="form-control"/>
+                <span class="input-group-btn">
+                  <input type="submit" class="btn btn-default" value="Buscar" />
+                </span>
+              </div> 
+            </form>
+            
+            <div id="sidebar">
+              {% block sidebar %}
+              {% endblock sidebar %}
+            </div>
+          </div>         
+        </div>      	
+        <div class="col-sm-9 col-xs-12 col-pan-r" style="background:#FFFFFF;">
+          <div>{% block breadcrumbs %}{% endblock breadcrumbs  %}</div>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="destacados">{% block slider %}{% endblock slider %}</div>
+            </div>
+           <!--  <div class="col-lg-4">
+              <div class="widget-entriesrp">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#recent_entries" data-toggle="tab">{% trans "Recent" %}</a></li>
+                  <li><a href="#popular_entries" data-toggle="tab">{% trans "Popular" %}</a></li>
+                </ul>
+                
+                <div class="tab-content">
+                  <div class="tab-pane active" id="recent_entries">{% get_recent_entries %}</div>
+                  <div class="tab-pane" id="popular_entries">{% get_popular_entries %}</div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          
+
+          <section id="content" class="hfeed {% block id_list %}{% endblock id_list %}">
+            {% block content %}          
+            {% endblock content %}
+          </section>          
+        </div>                        
+      </div>
+    </div>  
+    <footer>
+      <!-- <div class="slogan">
+        <figure>
+          <img src="{% static "assets/img/logob_upeu.png" %}">
+        </figure>
+        <strong>ESCUELA</strong> DE <strong>POSGRADO</strong>
+        <P>"Profesionales Altamente Confiables"</P>
+        <small class="ubicacion">
+        {% placeholder "ubicacion" or %}
+          {% show_placeholder "ubicacion" "home" %}
+        {% endplaceholder %}
+        </small>
+      </div>  -->     
+    </footer>  
+    <script src="{% static "assets/js/jquery-1.11.1.min.js" %}"></script>
+    <script src="{% static "assets/js/bootstrap.min.js" %}"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+{% load i18n %}
+<ul class="pagination">  
+  <li {% if not page.has_previous %}class="disabled"{% endif %}>
+    <a {% if page.has_previous %}href="?page={{ page.previous_page_number }}{{ GET_string }}"
+       title="{% trans "More recent entries" %}"{% endif %}>&laquo;</a>
+  </li>
+  {% for page_number in begin %}
+  <li class="{% ifequal page.number page_number %}current{% endifequal %}">
+    {% ifequal page.number page_number %}
+    <a href="?page={{ page_number }}{{ GET_string }}"
+       title="{% trans "Entries page" %} {{ page_number }}"><strong>{{ page_number }}</strong></a>
+    {% else %}
+    <a href="?page={{ page_number }}{{ GET_string }}"
+       title="{% trans "Entries page" %} {{ page_number }}">{{ page_number }}</a>
+    {% endifequal%}
+  </li>
+  {% endfor %}
+  {% if middle %}
+  <li class="ellipsis">&hellip;</li>
+  {% for page_number in middle %}
+  <li class="{% ifequal page.number page_number %}current{% endifequal %}">
+    {% ifequal page.number page_number %}
+    <a href="?page={{ page_number }}{{ GET_string }}"
+       title="{% trans "Entries page" %} {{ page_number }}"><strong>{{ page_number }}</strong></a>
+    {% else %}
+    <a href="?page={{ page_number }}{{ GET_string }}"
+       title="{% trans "Entries page" %} {{ page_number }}">{{ page_number }}</a>
+    {% endifequal%}
+  </li>
+  {% endfor %}
+  {% endif %}
+
+  {% if end %}
+  <li class="ellipsis">&hellip;</li>
+  {% for page_number in end %}
+  <li class="{% ifequal page.number page_number %}current{% endifequal %}">
+    {% ifequal page.number page_number %}
+    <a href="?page={{ page_number }}{{ GET_string }}"
+       title="{% trans "Entries page" %} {{ page_number }}"><strong>{{ page_number }}</strong></a>
+    {% else %}
+    <a href="?page={{ page_number }}{{ GET_string }}"
+       title="{% trans "Entries page" %} {{ page_number }}">{{ page_number }}</a>
+    {% endifequal%}
+  </li>
+  {% endfor %}
+  {% endif %}
+  <li {% if not page.has_next %}class="disabled"{% endif %}>
+    <a {% if page.has_next %}href="?page={{ page.next_page_number }}{{ GET_string }}"
+       title="{% trans "More old entries" %}"{% endif %}>&raquo;</a>
+  </li>
+</ul>
+

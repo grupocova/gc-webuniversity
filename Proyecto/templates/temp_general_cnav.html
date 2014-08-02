@@ -1,0 +1,37 @@
+{% extends "base_page_column2.html" %}
+{% load cms_tags menu_tags %}
+
+  <!--breadcrumbs-->     
+  {% block breadcrumb %}
+  <ol class="breadcrumb">
+    {% show_breadcrumb %}
+  </ol>
+  {% endblock breadcrumb %}  
+  
+  {% block content_left %}
+    <!--Navegacion-->
+    {% block nav_page %}
+    <div class="navcont">
+      <ul>
+        {% show_sub_menu 100 1 1 %}
+      </ul>
+    </div>  
+    {% endblock nav_page %}   
+  {% endblock content_left %}
+
+  <!--Contenido-->
+  {% block content_main %}
+    <div class="content-main">
+      {% block title_page %}
+      <div class="title">
+        <h3> {% page_attribute "title" %} </h3> 
+      </div>
+      {% endblock title_page %}
+      {% block content_main_page %}
+      <div class="content">
+        {% placeholder content_main %}
+      </div> 
+      {% endblock content_main_page %} 
+    </div> 
+  {% endblock content_main %} 
+ 

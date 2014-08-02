@@ -1,0 +1,104 @@
+/* content */
+#amazingcarousel-1{
+	display:block;
+	position:relative;
+	margin:0px auto 0px;
+}
+#amazingcarousel-1 .amazingcarousel-list-container { 
+	padding: 0;
+	overflow:hidden;
+	min-height: 290px;
+}
+/* item */
+#amazingcarousel-2 .amazingcarousel-list{
+	height: 290px;	
+}
+#amazingcarousel-1 .amazingcarousel-item-container {	
+	width: 100%;	
+	background: rgba(0, 0, 0, 0.07);
+}
+/* arrows */
+#amazingcarousel-1 .amazingcarousel-prev {
+	right: 0;
+	top: -45px;
+	margin-right: 42px;
+	margin-top: 8px;
+	color: #2F4263;
+	line-height: 28px;
+	vertical-align: middle;
+	text-align: center;
+}
+#amazingcarousel-1 .amazingcarousel-next {
+	right: 0;
+	top: -45px;
+	margin-right: 10px;
+	margin-top: 8px;
+	color: #2F4263;
+	line-height: 28px;
+	vertical-align: middle;
+	text-align: center;
+}
+#amazingcarousel-1 .amazingcarousel-bullet-wrapper {
+	margin: 0;
+}
+#amazingcarousel-1 .amazingcarousel-engine{
+	display:none;
+}
+#amazingcarousel-3{
+	position:relative;
+	margin:0px auto 0px;
+	/*background: #567;*/
+	max-height: 600px;	
+	width: 100%;
+}
+#amazingcarousel-3 .media {	
+	padding: 5px;	
+}
+#amazingcarousel-3 .media img {	
+	max-width: 100%;
+	border: 0;
+	margin: auto;
+	padding: 5px;	
+	background: rgba(255, 255, 255, 0.9);
+	-moz-box-shadow:  0 1px 4px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);		
+}
+/* carousel */
+#amazingcarousel-3 .amazingcarousel-list-container { 
+	overflow:hidden;
+	padding:0;
+	background: transparent;
+}
+/* item */
+#amazingcarousel-3 .amazingcarousel-item-container {
+	text-align: center;
+	padding: 0px;
+	margin-bottom: 10px;
+	height: auto;
+	background: transparent;
+}
+/* arrows */
+#amazingcarousel-3 .amazingcarousel-prev {
+	right: 0;
+	top: -40px;
+	margin-right: 42px;
+	color: #2F4263;
+	line-height: 28px;
+	vertical-align: middle;
+	text-align: center;
+}
+#amazingcarousel-3 .amazingcarousel-next {
+	right: 0;
+	top: -40px;
+	margin-right: 10px;
+	color: #2F4263;
+	line-height: 28px;
+	vertical-align: middle;
+	text-align: center;
+}
+@media screen and (max-width: 1199px){
+	#amazingcarousel-1 .amazingcarousel-list-container,#amazingcarousel-2 .amazingcarousel-list{
+		/*min-height: 380px;*/
+	} 
+}

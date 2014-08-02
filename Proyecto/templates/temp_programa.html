@@ -1,28 +1,58 @@
-{% extends "baseprogramas.html"%}
+{% extends "base_page_column3.html"%}
 {% load cms_tags menu_tags stack_tags  %}
 
   <!--breadcrumbs-->     
-  {% block wepg_prog_breadcrumb %} {% show_breadcrumb %} {% endblock wepg_prog_breadcrumb %}
+  {% block breadcrumb %}
+  <ol class="breadcrumb">
+    {% show_breadcrumb %}
+  </ol>
+  {% endblock breadcrumb %}
   
-  <!--Nvaegacion-->       
-  {% block wepg_prog_titulo %}  {% page_attribute "title" request.current_page.parent_id %} {% endblock wepg_prog_titulo %}    
-   
-  {% block wepg_prog_navegacion %} {% show_sub_menu 1 None 0 %}  {% endblock wepg_prog_navegacion %}      
+  <!--Navegacion-->       
+  {% block content_left %}
+    {% block nav_page %}
+    <div class="navcont">
+      <ul>
+        {% show_sub_menu 100 2 1 %}
+      </ul>
+    </div>  
+    {% endblock nav_page %}   
+  {% endblock content_left %}     
+  
+  {% block content_right %}
+    <!--Inscripcion online-->
+    {% block inscripcion %} 
+    <div class="inscripcion">
+      <div class="title"><h4>Inscripción Online</h4></div>
+      <div class="content">
+        {% stack "inscripcion" %}
+      </div>
+    </div>
+    {% endblock inscripcion %} 
+    <!--Brochure-->
+    {% block brochure %}
+    <div class="brochure">
+      <div class="title"><h4>Brochure</h4></div>
+      <div class="content">              
+        {% placeholder "brochure" inherit or %}No hay brochure disponible para este programa {% endplaceholder %}                    
+      </div>
+    </div>
+    {% endblock brochure %} 
+  {% endblock content_right %}
 
-  <!--contactenos-->    
-  {% block wepg_prog_contactenos %} {% stack wepg_contactenos %} {% endblock wepg_prog_contactenos %} 
-   
-  <!--brochure-->      
-  {% block wepg_prog_brochure %} <!-- {% stack wepg_brochure %}  --> {% endblock wepg_prog_brochure %}      
-    
-
-  <!--Contenido-->
-   
-  {% block wepg_prog_cont_titulo %} {% page_attribute "title" %} {% endblock wepg_prog_cont_titulo %}
-  {% block wepg_prog_contenido %} 
-    {% placeholder wepg_prog_contenido %} 
-
-    {% show_sub_menu 100 1 100 %} 
-
-  {% endblock wepg_prog_contenido %}       
+  <!--Contenido principal-->
+  {% block content_main %}
+    <div class="content-main">
+      {% block title_page %}
+      <div class="title">
+        <h3> {% page_attribute "title" %} </h3> 
+      </div>
+      {% endblock title_page %}
+      {% block content_main_page %}
+      <div class="content">
+        {% placeholder content_main %}
+      </div> 
+      {% endblock content_main_page %}
+    </div> 
+  {% endblock content_main %}      
   

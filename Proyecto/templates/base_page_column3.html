@@ -1,0 +1,24 @@
+{% extends "baseweb.html" %}
+{% load cms_tags sekizai_tags menu_tags stack_tags  %}
+
+{% block content_page %}
+  <div class="row">
+    <div class="col-lg-12">
+      {% block breadcrumb %}  {% endblock breadcrumb %}      
+    </div>
+  </div> 
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3">
+      {% block content_left %} 
+      {% endblock content_left %}     
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      {% block content_main %} 
+      {% endblock content_main %}     
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3">
+      {% block content_right %} 
+      {% endblock content_right %}     
+    </div>
+  </div>
+{% endblock content_page %}

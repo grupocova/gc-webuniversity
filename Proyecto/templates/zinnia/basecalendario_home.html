@@ -1,34 +1,29 @@
-{% load comments i18n zinnia_tags staticfiles %}
-
+{% load comments i18n zinnia_tags staticfiles %} 
+<div class="events-items">        
 {% if entries %}
 <div id="amazingcarousel-1">
   <div class="amazingcarousel-list-container" style="">
     <ul class="amazingcarousel-list">      
       {% for entry in entries %} 
-      <li class="amazingcarousel-item">
-        <div class="amazingcarousel-item-container">
-          <div class="media">
-            <a class="pull-left" href="{{ entry.get_absolute_url }}">
-              <div class="idate media-object">
-                <div class="idate-day">19</div>
-                <div class="idate-month">Feb</div>                    
-              </div>
-            </a>
-            <div class="media-body">
-              <h4 class="media-heading">{{ entry.title }}</h4>
-              {{ entry.excerpt|safe|linebreaks|truncatewords_html:5 }}
-            </div>
-          </div>            
-        </div>            
-        <div style="clear:both;"></div>    
+      <li class="amazingcarousel-item event">
+        <div class="idate">
+          <div class="idate-day">19</div>
+          <div class="idate-month">Feb</div>                    
+        </div>
+        <div class="content">
+          <h3 class="title">
+            <a href="{{ entry.get_absolute_url }}">{{ entry.title|truncatewords_html:10}}</a>
+          </h3>
+          <p>{{ entry.excerpt|truncatewords_html:11 }}</p>
+        </div>
       </li>     
       {% endfor %}       
     </ul>
-
   </div>
-    <div class="amazingcarousel-prev"></div>
-    <div class="amazingcarousel-next"></div>
+    <div class="amazingcarousel-prev"><span class="glyphicon glyphicon-chevron-up"></span></div>
+    <div class="amazingcarousel-next"><span class="glyphicon glyphicon-chevron-down"></span></div>
 </div>
-
+{% else %}
+<p>No hay contenido publicado para esta secci&oacute;n</p>
 {% endif %}
- 
+</div>

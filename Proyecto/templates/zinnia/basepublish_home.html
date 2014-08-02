@@ -1,34 +1,32 @@
 {% load comments i18n zinnia_tags staticfiles %}
-
+<div class="docs-items"> 
 {% if entries %}
-
   <div id="amazingcarousel-3">
-    <div class="amazingcarousel-list-container">
-      
+    <div class="amazingcarousel-list-container">      
       <ul class="amazingcarousel-list">
         {% for entry in entries %} 
-        <li class="amazingcarousel-item">
-          <div class="amazingcarousel-item-container">
-             <div class="media " >
-            <a href="{% if entry.image %}{{ entry.image.url }}{% endif %}" class="pull-left html5lightbox" title="{{ entry.title }}" style="width: 40%;" data-group="amazingcarousel-3" >
-              <img src="{% if entry.image %}{{ entry.image.url }}{% endif %}"class="media-object" style="width: 100%;" />
+        <li class="amazingcarousel-item doc">          
+          <figure class="img">
+            <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" style="width: 40%;">
+              <img src="{% if entry.image %}{{ entry.image.url }}{% endif %}" alt="{{ entry.title}}" class="media-object" style="width: 100%;" />
             </a>
-          <div class="media-body" style="text-align: left;">
-            <h4 class="media-heading">{{ entry.title }}</h4>
-             {{ entry.content|safe|linebreaks|truncatewords_html:50 }}
-          </div>
-</div>
-            
-          </div>
+          </figure>
+          <div class="content">
+            <h3 class="title">
+              <a href="{{ entry.get_absolute_url }}"  target="_blank">{{ entry.title|truncatewords_html:9}}</a>
+            </h3>           
+            <p class="info"><span class="date">{{ entry.creation_date|date:"d/m/y" }}</span></p> 
+            {{ entry.content|safe|truncatewords_html:22}}
+          </div> 
         </li>
         {% endfor %}       
       </ul>
-
     </div>
-    <div class="amazingcarousel-prev"></div>
-    <div class="amazingcarousel-next"></div>
+    <div class="amazingcarousel-prev"><span class="glyphicon glyphicon-chevron-up"></span></div>
+    <div class="amazingcarousel-next"><span class="glyphicon glyphicon-chevron-down"></span></div>
   </div>
-
+{% else %}
+  <p>No hay contenido publicado para esta sección</p>
 {% endif %}
-
+</div>
 

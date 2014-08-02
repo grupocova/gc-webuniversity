@@ -1,0 +1,26 @@
+{% extends "base_page_column1.html" %}
+{% load cms_tags menu_tags %}
+
+  <!--breadcrumbs-->     
+  {% block breadcrumb %}
+  <ol class="breadcrumb">
+    {% show_breadcrumb %}
+  </ol>
+  {% endblock breadcrumb %}    
+
+  <!--Contenido-->
+  {% block content_main %}
+    <div class="content-main">
+      {% block title_page %}
+      <div class="title">
+        <h3> {% page_attribute "title" %} </h3> 
+      </div>
+      {% endblock title_page %}
+      {% block content_main_page %}
+      <div class="content">
+        {% placeholder content_main %}
+      </div> 
+      {% endblock content_main_page %}
+    </div> 
+  {% endblock content_main %} 
+ 

@@ -1,0 +1,102 @@
+{% extends "baseweb.html" %}
+{% load cms_tags menu_tags %}
+
+{% block content_page %}
+  {% block slider %}  
+    {% placeholder slider_destacados %}  
+  {% endblock slider %}
+
+  <div class="row">
+    <!--panel izquierdo-->
+    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 p-left">
+      <!--Anuncios -->
+      {% block anuncios %}      
+      <section class="ads">
+        <div class="title">
+          <h2>
+            <a href="">Recientes</a>
+          </h2>
+        </div>        
+        {% placeholder anuncios_home %}
+      </section>
+      {% endblock anuncios %}
+      <!--Noticias-->
+      {% block noticias %}      
+      <section class="news">
+        <div class="title">
+          <h2>
+            <a href="">Noticias</a>
+          </h2>
+        </div>
+        <!-- <div class="title">
+          <h2><span style="font-weight: bolder;color: #884468;">NOTICIAS</span><span style="color: #2F4263;">EPG</span></h2>
+        </div> -->        
+        {% placeholder noticias_home %}
+      </section>
+      {% endblock noticias %}     
+    </div>   
+    <!--panel derecho-->
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 p-right">
+      <!--Eventos--> 
+      {% block eventos %}
+      <section class="events">
+        <div class="title">
+          <h2>
+            <a href="">Eventos</a>
+          </h2>
+        </div>
+        {% placeholder eventos_home %}
+      </section>       
+      {% endblock eventos %}
+      <!--publicaciones--> 
+      {% block publicaciones %}      
+      <section class="docs">
+        <div class="title">
+          <h2>
+            <a href="">Publicaciones</a>
+          </h2>
+        </div>  
+        {% placeholder publicaciones_home %}  
+      </section>
+      {% endblock publicaciones %}
+      <!--contenido extra-->
+      {% block extra %} 
+      <div class="servicios" >
+        <div class="title">
+          <h2><a href="">Servicios</a></h2>
+        </div>
+        <div class="servicio-item">
+        	{% placeholder servicios_home %} 
+        </div>        
+      </div>
+      {% endblock extra %}     
+    </div>
+  </div>
+
+  <div class="popup-modal">
+    {% block popup %}
+    <a data-toggle="modal" data-target="#myModal" style="display:none;">
+      modal
+    </a>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <div class="modal-body">
+            {% placeholder ultimas_entradas %} 
+          </div>        
+        </div>
+      </div>
+    </div>
+    {% endblock popup %}
+  </div>
+
+{% endblock content_page %}
+
+{% block popup_js %}
+ <script type="text/javascript">
+  // $('#myModal').modal('show')
+</script>
+{% endblock popup_js %}
+

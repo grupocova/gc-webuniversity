@@ -1,0 +1,17 @@
+
+{% load menu_tags %}
+
+{% for child in children %}
+<li {% if child.selected %}class="selected"{% endif %}{% if child.ancestor %}class="ancestor"{% endif %}{% if child.sibling %}class="sibling"{% endif %}{% if child.descendant %}class="descendant"{% endif %}>
+	<a href="{% if not child.children %} {{ child.attr.redirect_url|default:child.get_absolute_url }}{% endif %}">{{ child.get_menu_title }} {% if child.children %}{% endif %}  </a>	
+	{% if child.children %}
+    <ul>
+        {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
+    </ul>
+    {% endif %}
+</li>
+{% endfor %}
+
+
+      
+   

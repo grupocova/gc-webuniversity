@@ -1,227 +1,157 @@
 <!DOCTYPE html>
 
-{% load cms_tags sekizai_tags menu_tags stack_tags  %}
+{% load cms_tags sekizai_tags menu_tags stack_tags staticfiles %}
 <html lang="es">
 <head>
 	{% render_block "css" %}
-	<meta charset="utf-8" />	
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">	
   <title>EPG | Escuela de Posgrado</title>
-  
+  <link rel="shortcut icon" href="{% static "zinnia/img/favicon2.ico" %}" />
 	<!-- css bootstrap -->
-	<link rel="stylesheet" type="text/css" href="/media/bootstrap3/css/bootstrap.css" />
-	<!-- <link rel="stylesheet" type="text/css" href="/media/bootstrap3/css/bootstrap.min.css" /> -->
-	<link rel="stylesheet" type="text/css" href="/media/bootstrap3/css/bootstrap-glyphicons.css" />
-
+	<link rel="stylesheet" href="{% static "assets/css/bootstrap.css" %}" />
   <!-- css amazingcarousel-slider -->
-  <link rel="stylesheet" type="text/css" href="/media/amazing/css/initcarousel-1.css">
-  <link rel="stylesheet" type="text/css" href="/media/amazing/css/initcarousel-2.css">
-  <link rel="stylesheet" type="text/css" href="/media/amazing/css/initcarousel-3.css">
- 
+  <link rel="stylesheet" href="{% static "assets/css/initcarousel.css" %}">
   <!-- css web -->
-  <link rel="stylesheet" type="text/css" href="/media/assets/css/style.css" /> 
-  <!-- <link rel="stylesheet" type="text/css" href="/media/assets/css/styleshadow.css" />  -->
+  <link rel="stylesheet" href="{% static "assets/css/style.css" %}" /> 
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
   {% cms_toolbar %}
   
   <!-- header-->
-  <header id="wepg-header">
-
-    <!-- Navegacion Superior -->
-    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation" id="wepg-navtop">      
+  <header>
     <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-wepgmain">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#"><img src="/media/assets/img/letra.png"></a>
-      </div>
-
-      
-      <div class="collapse navbar-collapse navbar-wepgmain">
-        <ul class="nav navbar-nav">
-          <li><a href="#">Aula Virtual</a></li>
-          <li><a href="#">Mapa del Sitio</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Idioma <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">English</a></li>
-              <li><a href="#">Español</a></li>
-            </ul>
-          </li>
-        </ul>  
-
-        <ul class="nav navbar-nav navbar-right">
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Buscar</button>
-          </form>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div>    
-    </nav>
-    <!-- Fin Navegacion Superior -->
-
-    <div class="container"  >
-      <!-- Encabezado -->
-      <div class="row" id="wepg-encabezado">
-        <div class="col-lg-9">
-          <a  href="http://localhost:8000/es/">
-            <img src="/media/assets/img/logo_posgrado.png">            
-          </a>          
-        </div>
-
-        <div class="col-lg-3">
-          <div class="pull-right">
-            <small class=""><span class="glyphicon glyphicon-time"></span>&nbsp;
-            <script>
-              var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-              var f=new Date();
-              document.write("Lima, "+f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
-            </script>
-            </small>               
+      <div class="tools">
+        <div class="search">
+          <div class="d-right"></div>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Ingresar Busqueda...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">
+                  <span class="glyphicon glyphicon-search"></span>
+                </button>
+              </span>
           </div>
+          <div class="d-left"></div>
         </div>
-      </div><!-- Fin Encabezado -->
-
-      <!-- Navegacion --> 
-      <div class="row">  
-        <div class="col-lg-12" id="wepg-navmain">
-          <ul class="nav nav-pills pull-right">
-            {% show_menu 0 1 100 100 "menu_1.html" %}           
-          </ul>        
+      </div> 
+      <div class="row encabezado">
+        <div class="logo">
+        {% placeholder "logo" or %}
+          {% show_placeholder "logo" "home" %}
+        {% endplaceholder %}
         </div>
-      <!-- Fin Navegacion --> 
+        <div class="header-nav">           
+          <ul>
+            <li class="item first">{% placeholder "hlink_1" or %}{% show_placeholder "hlink_1" "home" %}{% endplaceholder %}</li>
+            <li class="item">{% placeholder "hlink_2" or %}{% show_placeholder "hlink_2" "home" %}{% endplaceholder %}</li>
+            <li class="item">{% placeholder "hlink_3" or %}{% show_placeholder "hlink_3" "home" %}{% endplaceholder %}</li>
+            <li class="item">{% placeholder "hlink_4" or %}{% show_placeholder "hlink_4" "home" %}{% endplaceholder %}</li>              
+          </ul>              
+        </div>
       </div>
-    </div> 
-
+    </div>
   </header>
   
+  <!-- Navegacion --> 
+  <nav>    
+    <div class="container">  
+      <ul class="nav nav-pills">
+        {% show_menu 0 1 100 100 "menu_main.html" %}           
+      </ul> 
+    </div>    
+  </nav>
+  
   <!-- principal -->
-<div class="" > 
-  {% block wepg_contenido %}{% endblock %} 
-
-  <div class="container">
-    <div class="wepg-panel" id="wepg-links">
-      <h5>LINKS DE INTERES</h5>
-    </div>   
+  <div class="container" >
+    {% block content_page %} {% endblock content_page %}
   </div>
 
-</div>
-
   <!-- footer-->
-  <footer id="wepg-footer">
+  <footer>
     <div class="container">
       <div class="row">
-        <div class="col-lg-9 col-sm-9" >
-          <div class="row">
-            {% show_menu 0 1 100 100 "menufooter.html"%}
+        <div class="col-lg-4 col-sm-4">
+          <div class="slogan">
+            <figure>
+              <img src="{% static "assets/img/logoupeug.png" %}">
+            </figure>
+            <strong>ESCUELA</strong> DE <strong>POSGRADO</strong>
+            <P>"Profesionales Altamente Confiables"</P>
+            <small class="ubicacion">
+            {% placeholder "ubicacion" or %}
+              {% show_placeholder "ubicacion" "home" %}
+            {% endplaceholder %}
+            </small>
           </div>
+          <div class="social">            
+            <ul>
+              <li><a href="https://www.facebook.com/EscueladePosgrado.UPeU" class="ifacebook" data-toggle="tooltip" data-placement="top" title="/EscueladePosgrado.UPeU"></a></li> 
+              <li><a href="https://twitter.com/upeuepg" class="itwitter" data-toggle="tooltip" data-placement="top" title="@upeuepg"></a></li>
+              <li><a href="https://www.youtube.com/user/UPeUEPG" class="iyoutube" data-toggle="tooltip" data-placement="top" title="UPeUEPG"></a></li>         
+              <li><a href="https://plus.google.com/u/0/110322229802450199975/posts" class="igoogle" data-toggle="tooltip" data-placement="top" title="Google +"></a></li>     
+            </ul>           
+          </div>           
         </div>        
-
-        <!-- <div class="col-lg-3 wepg-navinf">
-          <div>
-          <h1>Especialidades</h1>
-          <ul class="">
-            <li><a href="#">En enfermeria</a></li>    
-          </ul>
-          <h1>Diplomados</h1>
-
-          <ul class="">
-            <li><a href="#">Estadistica Aplicada</a></li>
-            <li><a href="#">Seguridad Industrial</a></li> 
-            <li><a href="#">Bussines process Management</a></li>     
-          </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-3 wepg-navinf">
-          <div>
-          <h1>Maestrias</h1>
-
-          <ul class="">
-
-            <li><a href="#">Administracion de Negocios</a></li>
-            <li><a href="#">Ciencias de la Familia</a></li>
-            <li><a href="#">Enfermeria</a></li>  
-            <li><a href="#">Educación</a></li>  
-            <li><a href="#">Ingenieria de sistemas</a></li>
-            <li><a href="#">Salud Pública</a></li>  
-            <li><a href="#">Teología</a></li>        
-          </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-3 wepg-navinf">
-          <div>
-          <h1>Doctorados</h1>
-
-          <ul class="">
-
-            <li><a href="#">Administracion</a></li>
-            <li><a href="#">Educación</a></li>
-            <li><a href="#">Teología</a></li>        
-          </ul>
-          </div>
-        </div> -->
-
-        <div class="col-lg-3 col-sm-3 wepg-moreinf" >
-          <div class="icosocial">
-          <h1>Síguenos en:</h1>
-          <ul>
-            <li><a href="#" id="face"><span>Facebook</span></a></li> 
-            <li><a href="#" id="twit"><span>Twitter</span></a></li>
-            <li><a href="#" id="you"><span>Youtube</span></a></li>         
-            <li><a href="#" id="gog"><span>Google +</span></a></li>     
+        <div class="col-lg-8 col-sm-8">
+          <ul class="nav-footer">
+            {% show_menu 0 1 100 100 "menu_footer.html"%}          
           </ul>            
-          </div>
-          <div class="contactenos icono">
-            <h1>Contáctenos:</h1>
-            {% stack "contactenos" %}           
-            <!-- <p>Si tiene alguna consulta o sugerencia, póngase en contacto con nosotros.</p> 
-            <div id="ico-mail"></div> <p>epgposgrado@upeu.edu.pe </p>    
-            <div id="ico-telf"></div><p>Telef: (511)618-6315 / (511)618-6316 Fax: (511)618-6339</p> -->
-          </div>
-        
-        </div>
-
-      </div> 
-      
-      <!-- {% show_menu 0 1 100 100 "menufooter.html" %}  -->
-
+        </div>         
+      </div>     
     </div> 
-    <div style="background:rgba(117, 13, 28, 0.3); min-height: 50px; color:#fff; padding:5px; font-size:9pt;">
+    <div class="wrap">
       <div class="container">
-        <img style="float:left; padding:10px 10px 10px 0;"src="/media/assets/img/minilogo_posgrado.png">
-        <small>
-          {% stack "footer_creditos" %} 
-        </small>      
+        <div class="footer-links">
+          <ul class="links">
+            <li class="item">{% placeholder "flink_1" or %}{% show_placeholder "flink_1" "home" %}{% endplaceholder %}<span>&bull;</span></li>
+            <li class="item">{% placeholder "flink_2" or %}{% show_placeholder "flink_2" "home" %}{% endplaceholder %}<span>&bull;</span></li>
+            <li class="item">{% placeholder "flink_3" or %}{% show_placeholder "flink_3" "home" %}{% endplaceholder %}<span>&bull;</span></li>
+            <li class="item last">{% placeholder "flink_4" or %}{% show_placeholder "flink_4" "home" %}{% endplaceholder %}</li>
+          </ul>
+        </div>        
+        <div class="creditos">
+          <p>Desarrollado por:</p>            
+          <p>Area de Sistemas - Escuela de Posgrado</p>
+          <p>© 2014 Escuela de Posgrado - UPeU. Todos los derechos reservados.</p>
+        </div>                
       </div>      
-    </div> 
+    </div>
   </footer>
+  <div class="contact">
+    <div class="title">
+      <p>Contactenos</p>
+    </div>
+    <div class="content" id="mc_embed_signup">
+      <p>Deje su correo y nombre y responderemos a sus preguntas de inmediato</p>      
+      <form role="form" action="http://posgradoupeu.us3.list-manage1.com/subscribe/post?u=b9c5fb258cd2cd1ec5808843c&amp;id=58d7bffc92" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>                 
+        <div class="form-group email">          
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="EMAIL" id="mce-EMAIL">          
+        </div>
+        <div class="form-group name">
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre" name="FNAME" id="mce-FNAME">
+        </div>  
+        <div id="mce-responses" class="clear">
+          <div class="response" id="mce-error-response" style="display:none"></div>
+          <div class="response" id="mce-success-response" style="display:none"></div>
+        </div> 
+        <div style="position: absolute; left: -5000px;"><input type="text" name="b_b9c5fb258cd2cd1ec5808843c_58d7bffc92" tabindex="-1" value=""></div>
+        <button type="submit" class="btn btn-default" name="subscribe" id="mc-embedded-subscribe">Inscribir</button>
+      </form>
+    </div>    
+  </div>
 
 <!-- js ............................................................................ -->
 {% render_block "js" %}
 <!-- js generales -->
-<script src="/media/assets/js/jquery.js"></script>
-<script src="/media/assets/js/holder.js"></script>
-
+<script src="{% static "assets/js/jquery-1.11.1.min.js" %}"></script>
 <!-- js bootstrap -->
-<script src="/media/bootstrap3/js/bootstrap.js"></script>
-<!-- <script src="/media/bootstrap3/js/bootstrap.min.js"></script> -->
-
+<script src="{% static "assets/js/bootstrap.min.js" %}"></script>
 <!-- js amazing carousel -->
-<script src="/media/amazing/js/amazingcarousel.js"></script>   
-<script src="/media/amazing/js/initcarousel-1.js"></script>
-<script src="/media/amazing/js/initcarousel-2.js"></script>
-<script src="/media/amazing/js/initcarousel-3.js"></script>
-
-
+<script src="{% static "assets/js/amazingcarousel.js" %}"></script>   
+<script src="{% static "assets/js/initcarousel.js" %}"></script>
+{% block popup_js %}
+{% endblock popup_js %}
 </body>
 </html>

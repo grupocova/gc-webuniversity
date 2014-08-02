@@ -1,21 +1,35 @@
 {% load comments i18n zinnia_tags staticfiles %}
-
+<div class="ads-items">       
 {% if entries %}
-  <div class="row">
-    {% for entry in entries %}       
-  <div class="col-lg-6">
-    <div class="thumbnail" style="min-height:200px;">
-      <img class="" src="{% if entry.image %}{{ entry.image.url }}{% endif %}" style="width:100%; max-height:150px;" />
-      <div class="caption">
-        <h4>{{ entry.title }} &nbsp;&nbsp;<a href="{{ entry.get_absolute_url }}"><span class="glyphicon glyphicon-plus-sign"></span></a></h4>
-        <p>{{ entry.excerpt|safe|linebreaks|truncatewords_html:7 }}</p>
-       
-      </div>
-    </div>
-  </div>  
-
-
+    {% for entry in entries %} 
+    <article class="ad ad{{ forloop.counter }}">
+      <h3 class="title">
+        <a href="{{ entry.get_absolute_url }}">{{ entry.title|truncatewords_html:10 }}</a>
+      </h3>
+      <p class="info">{% with authors=entry.authors.all %}
+      {% if authors|length %}
+      {% for author in authors %}
+      <span class="author">       
+        <a href="{{ author.get_absolute_url }}" class="fn url{% if not author.get_full_name %} nickname{% endif %}" rel="author"
+           title="{% blocktrans %}Show all {{ author }}'s entries{% endblocktrans %}">{{ author }}</a>
+        </span>{% if not forloop.last %}, {% endif %}       
       {% endfor %}
-  </div>
-{% endif %}
+      {% endif %} 
+      {% endwith %} | <span class="date">{{ entry.creation_date|date:"d/m/y" }}</span></p>
 
+      {% if entry.image %}
+      <!-- <figure class="img"><img src="{{ entry.image.url }}"></figure> -->
+      {% endif %}
+      <div class="content">
+        {% if entry.image %}
+      	<p>{{ entry.excerpt|safe|truncatewords_html:50}}<a href="{{ entry.get_absolute_url }}" class="more">Leer M&aacute;s</a></p>
+        {% else %}
+        <p>{{ entry.excerpt|safe|truncatewords_html:50}}<a href="{{ entry.get_absolute_url }}" class="more">Leer M&aacute;s.</a></p>
+        {% endif %}      	
+      </div>      
+    </article>
+    {% endfor %}
+{% else %}
+  <p>No hay contenido publicado para esta secci&oacute;n</p>
+{% endif %}
+</div>
